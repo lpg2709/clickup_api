@@ -39,4 +39,16 @@ Clickup.prototype.delete_task = function(task_id){
 	});
 }
 
+Clickup.prototype.get_task = function(task_id){
+	token = this.token;
+	return new Promise(async function(resolve, reject){
+		try{
+			var res = await Task.get_tesk(task_id, token);
+			resolve(res);
+		}catch(err){
+			reject(err);
+		}
+	});
+}
+
 module.exports = Clickup;
