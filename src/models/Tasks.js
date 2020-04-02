@@ -2,7 +2,7 @@ var https = require("https")
 var genParams = require('../utils/params');
 
 module.exports = {
-	create_taks: function(list_id, data, token){
+	create_taks: function (list_id, data, token) {
 		data = JSON.stringify(data);
 
 		const option = {
@@ -15,27 +15,27 @@ module.exports = {
 				"Content-Type": "application/json"
 			}
 		}
-		return new Promise(function(resolve, reject){
-			const req = https.request(option, function(res){
+		return new Promise(function (resolve, reject) {
+			const req = https.request(option, function (res) {
 				var str = '';
-				if(res.statusCode != 200){
+				if (res.statusCode != 200) {
 					reject(res.statusCode);
 				}
 
-				res.on('data', function(chunk){
+				res.on('data', function (chunk) {
 					str += chunk;
 				});
 
-				res.on('end', function(){
+				res.on('end', function () {
 					resolve(JSON.parse(str));
 				});
 
-				res.on('error', function(err){
+				res.on('error', function (err) {
 					reject(err);
 				});
 			});
 
-			req.on('error', function(err){
+			req.on('error', function (err) {
 				reject(err);
 			});
 			req.write(data);
@@ -43,7 +43,7 @@ module.exports = {
 		});
 	},
 
-	update_task: function(task_id, data, token){
+	update_task: function (task_id, data, token) {
 		data = JSON.stringify(data);
 
 		const option = {
@@ -56,34 +56,34 @@ module.exports = {
 				"Content-Type": "application/json"
 			}
 		}
-		return new Promise(function(resolve, reject){
-			const req = https.request(option, function(res){
+		return new Promise(function (resolve, reject) {
+			const req = https.request(option, function (res) {
 				var str = '';
-				if(res.statusCode != 200){
+				if (res.statusCode != 200) {
 					reject(res.statusCode);
 				}
 
-				res.on('data', function(chunk){
+				res.on('data', function (chunk) {
 					str += chunk;
 				});
 
-				res.on('end', function(){
+				res.on('end', function () {
 					resolve(JSON.parse(str));
 				});
 
-				res.on('error', function(err){
+				res.on('error', function (err) {
 					reject(err);
 				});
 			});
 
-			req.on('error', function(err){
+			req.on('error', function (err) {
 				reject(err);
 			});
 			req.write(data);
 			req.end();
 		});
 	},
-	delete_task: function(task_id, token){
+	delete_task: function (task_id, token) {
 
 		const option = {
 			host: 'api.clickup.com',
@@ -95,34 +95,34 @@ module.exports = {
 				"Content-Type": "application/json"
 			}
 		}
-		return new Promise(function(resolve, reject){
-			const req = https.request(option, function(res){
+		return new Promise(function (resolve, reject) {
+			const req = https.request(option, function (res) {
 				var str = '';
-				if(res.statusCode != 200){
+				if (res.statusCode != 200) {
 					reject(res.statusCode);
 				}
 
-				res.on('data', function(chunk){
+				res.on('data', function (chunk) {
 					str += chunk;
 				});
 
-				res.on('end', function(){
+				res.on('end', function () {
 					resolve(JSON.parse(str));
 				});
 
-				res.on('error', function(err){
+				res.on('error', function (err) {
 					reject(err);
 				});
 			});
 
-			req.on('error', function(err){
+			req.on('error', function (err) {
 				reject(err);
 			});
 			req.write("");
 			req.end();
 		});
 	},
-	get_task: function(task_id, token){
+	get_task: function (task_id, token) {
 		const option = {
 			host: 'api.clickup.com',
 			port: 443,
@@ -133,27 +133,27 @@ module.exports = {
 				"Content-Type": "application/json"
 			}
 		}
-		return new Promise(function(resolve, reject){
-			const req = https.request(option, function(res){
+		return new Promise(function (resolve, reject) {
+			const req = https.request(option, function (res) {
 				var str = '';
-				if(res.statusCode != 200){
+				if (res.statusCode != 200) {
 					reject(res.statusCode);
 				}
 
-				res.on('data', function(chunk){
+				res.on('data', function (chunk) {
 					str += chunk;
 				});
 
-				res.on('end', function(){
+				res.on('end', function () {
 					resolve(JSON.parse(str));
 				});
 
-				res.on('error', function(err){
+				res.on('error', function (err) {
 					reject(err);
 				});
 			});
 
-			req.on('error', function(err){
+			req.on('error', function (err) {
 				reject(err);
 			});
 			req.write("");
@@ -162,7 +162,7 @@ module.exports = {
 	},
 	get_tasks: function (params, token) {
 
-		var param = genParams(params);
+		var param = genParams(params, ["list_id", "archived"]);
 		const option = {
 			host: 'api.clickup.com',
 			port: 443,
@@ -173,27 +173,71 @@ module.exports = {
 				"Content-Type": "application/json"
 			}
 		}
-		return new Promise(function(resolve, reject){
-			const req = https.request(option, function(res){
+		return new Promise(function (resolve, reject) {
+			const req = https.request(option, function (res) {
 				var str = '';
-				if(res.statusCode != 200){
+				if (res.statusCode != 200) {
 					reject(res.statusCode);
 				}
 
-				res.on('data', function(chunk){
+				res.on('data', function (chunk) {
 					str += chunk;
 				});
 
-				res.on('end', function(){
+				res.on('end', function () {
 					resolve(JSON.parse(str));
 				});
 
-				res.on('error', function(err){
+				res.on('error', function (err) {
 					reject(err);
 				});
 			});
 
-			req.on('error', function(err){
+			req.on('error', function (err) {
+				reject(err);
+			});
+
+			req.write("");
+			req.end();
+		});
+	},
+	get_team_tasks: function (params, token) {
+
+		var param = genParams(params, ["team_id", "page"]);
+		if(param === undefined){
+			return;
+		}
+		const option = {
+			host: 'api.clickup.com',
+			port: 443,
+			path: `/api/v2/team/${params.team_id}/task?${param}`,
+			method: "GET",
+			headers: {
+				"Authorization": token,
+				"Content-Type": "application/json"
+			}
+		}
+		return new Promise(function (resolve, reject) {
+			const req = https.request(option, function (res) {
+				var str = '';
+				if (res.statusCode != 200) {
+					reject(res.statusCode);
+				}
+
+				res.on('data', function (chunk) {
+					str += chunk;
+				});
+
+				res.on('end', function () {
+					resolve(JSON.parse(str));
+				});
+
+				res.on('error', function (err) {
+					reject(err);
+				});
+			});
+
+			req.on('error', function (err) {
 				reject(err);
 			});
 

@@ -63,4 +63,16 @@ Clickup.prototype.get_tasks = function(params){
 	});
 }
 
+Clickup.prototype.get_team_tasks = function (params) {
+	token = this.token;
+	return new Promise(async function (resolve, reject) {
+		try {
+			var res = await Task.get_team_tasks(params, token);
+			resolve(res);
+		} catch (err) {
+			reject(err);
+		}
+	});
+}
+
 module.exports = Clickup;
