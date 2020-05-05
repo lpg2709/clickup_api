@@ -1,4 +1,4 @@
-const Cliclup = require("../src/index");
+const Cliclup = require("../../src/index");
 
 async function main(){
 
@@ -24,7 +24,7 @@ async function main(){
 	}
 
 	try{
-		var info = await clickup.get_tasks(param);
+		var info = await clickup.Tasks.get_tasks(param);
 		console.log(info);
 	}catch(err){
 		console.log(err)

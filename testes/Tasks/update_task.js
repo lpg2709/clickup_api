@@ -1,16 +1,16 @@
-const Cliclup = require("../src/index");
+const Cliclup = require("../../src/index");
 
 async function main(){
 
 	const clickup = new Cliclup("access_token");
 	var data = {
-		"name": "New Task Name",
+		"name": "New Task Name Update",
 		"content": "New Task Content",
-		"status": "Open"
-	  }
+		"status": "Closed"
+	}
 
 	try{
-		var info = await clickup.cretae_task("list_id", data);
+		var info = await clickup.Tasks.update_task("task_id", data);
 		console.log(info);
 	}catch(err){
 		console.log(err)
