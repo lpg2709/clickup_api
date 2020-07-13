@@ -1,5 +1,4 @@
-var https = require("https")
-var genParams = require('../utils/params');
+var https = require("https");
 
 module.exports = {
 	get_sapce_tags: function (space_id, token) {
