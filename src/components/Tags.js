@@ -28,6 +28,18 @@ Tags.prototype.create_space_tag = function (space_id, data){
 	});
 }
 
+Tags.prototype.edit_space_tag = function (space_id, tag_name, data) {
+	var token = this.token;
+	return new Promise(async function (resolve, reject) {
+		try {
+			var res = await Tag.edit_space_tag(space_id, tag_name, data, token);
+			resolve(res);
+		} catch (err) {
+			reject(err);
+		}
+	});
+}
+
 
 
 module.exports = Tags;
