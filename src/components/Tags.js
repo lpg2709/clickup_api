@@ -16,6 +16,18 @@ Tags.prototype.get_space_tag = function(space_id){
 	});
 }
 
+Tags.prototype.create_space_tag = function (space_id, data){
+	var token = this.token;
+	return new Promise(async function (resolve, reject) {
+		try {
+			var res = await Tag.create_space_tag(space_id, data, token);
+			resolve(res);
+		} catch (err) {
+			reject(err);
+		}
+	});
+}
+
 
 
 module.exports = Tags;
