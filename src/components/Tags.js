@@ -40,6 +40,17 @@ Tags.prototype.edit_space_tag = function (space_id, tag_name, data) {
 	});
 }
 
+Tags.prototype.delete_space_tag = function (space_id, tag_name) {
+	var token = this.token;
+	return new Promise(async function (resolve, reject) {
+		try {
+			var res = await Tag.delete_space_tag(space_id, tag_name, token);
+			resolve(res);
+		} catch (err) {
+			reject(err);
+		}
+	});
+}
 
 
 module.exports = Tags;
