@@ -1,8 +1,8 @@
-const Cliclup = require("../../src/index");
+const clickup_api = require("../../src/index");
 
 async function main() {
 
-	const clickup = new Cliclup("access_token");
+	const clickup = new clickup_api("access_token");
 	var param = {
 		"team_id": "team_id",
 		"page": 0,

@@ -1,8 +1,8 @@
-const Cliclup = require("../../src/index");
+const clickup_api = require("../../src/index");
 
 async function main(){
 
-	const clickup = new Cliclup("access_token");
+	const Clickup = new clickup_api("access_token");
 	var data = {
 		"name": "New Task Name",
 		"content": "New Task Content",
@@ -11,12 +11,11 @@ async function main(){
 
 	try{
 
-		var info = await clickup.Tasks.cretae_task("task_id", data);
+		var info = await Clickup.Tasks.cretae_task("task_id", data);
 		console.log(info);
 	}catch(err){
 		console.log(err)
 	}
-
 
 }
 main();

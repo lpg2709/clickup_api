@@ -6,7 +6,6 @@ var Tasks = function (token) {
 
 Tasks.prototype.cretae_task = function (list_id, data) {
 	token = this.token;
-	console.log(token)
 	return new Promise(async function (resolve, reject) {
 		try {
 			var res = await Task.create_taks(list_id, data, token);
