@@ -1,4 +1,4 @@
-# [ClickUp](https://clickup.com/)
+# [clickup_api](https://clickup.com/)
 
 No oficial module for [ClickUp API](https://clickup.com/api).
 
