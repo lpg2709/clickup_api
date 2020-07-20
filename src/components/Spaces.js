@@ -28,5 +28,40 @@ Spaces.prototype.update_space = function (space_id, data){
 	});
 }
 
+Spaces.prototype.delete_space = function (space_id) {
+	var token = this.token;
+	return new Promise(async function (resolve, reject) {
+		try {
+			var res = await Space.delete_space(space_id, token);
+			resolve(res);
+		} catch (err) {
+			reject(err);
+		}
+	});
+}
+
+Spaces.prototype.get_spaces = function (team_id, archived) {
+	var token = this.token;
+	return new Promise(async function (resolve, reject) {
+		try {
+			var res = await Space.get_spaces(team_id, archived, token);
+			resolve(res);
+		} catch (err) {
+			reject(err);
+		}
+	});
+}
+
+Spaces.prototype.get_space = function (space_id) {
+	var token = this.token;
+	return new Promise(async function (resolve, reject) {
+		try {
+			var res = await Space.get_space(space_id, token);
+			resolve(res);
+		} catch (err) {
+			reject(err);
+		}
+	});
+}
 
 module.exports = Spaces;
