@@ -1,7 +1,7 @@
 var https = require("https")
 
 module.exports = {
-	get_teams: function () {
+	get_teams: function (token) {
 		const option = {
 			host: 'api.clickup.com',
 			port: 443,
