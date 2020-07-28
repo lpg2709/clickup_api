@@ -58,9 +58,19 @@ To a detail documentation for each member of the module:
 
 To view the examples, you can access the [github](https://github.com/lpg2709/clickup_api) page, in folder ```testes``` you will find exemples for all member.
 
+- [Comments](https://github.com/lpg2709/clickup_api/tree/master/testes/Comments)
+- [CustomFields](https://github.com/lpg2709/clickup_api/tree/master/testes/CustomFields)
+- [Dependencies](https://github.com/lpg2709/clickup_api/tree/master/testes/Dependencies)
+- [Folders](https://github.com/lpg2709/clickup_api/tree/master/testes/Folders)
+- [Lists](https://github.com/lpg2709/clickup_api/tree/master/testes/Lists)
+- [Members](https://github.com/lpg2709/clickup_api/tree/master/testes/Members)
+- [SharedHierarchy](https://github.com/lpg2709/clickup_api/tree/master/testes/SharedHierarchy)
 - [Spaces](https://github.com/lpg2709/clickup_api/tree/master/testes/Spaces)
 - [Tags](https://github.com/lpg2709/clickup_api/tree/master/testes/Tags)
 - [Tasks](https://github.com/lpg2709/clickup_api/tree/master/testes/Tasks)
+- [TaskTemplates](https://github.com/lpg2709/clickup_api/tree/master/testes/TaskTemplates)
+- [Teams](https://github.com/lpg2709/clickup_api/tree/master/testes/Teams)
+- [Webhooks](https://github.com/lpg2709/clickup_api/tree/master/testes/Webhooks)
 
 ## License
 
