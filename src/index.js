@@ -8,6 +8,7 @@ const Webhooks = require("./components/Webhooks");
 const Folders = require("./components/Folders");
 const Comments = require("./components/Comments");
 const CustomFields = require("./components/CustomFields");
+const Dependencies = require("./components/Dependencies");
 
 var Clickup = function (token) {
 	this.token = token;
@@ -22,6 +23,7 @@ var Clickup = function (token) {
 	this.Folders = new Folders(this.token);
 	this.Comments = new Comments(this.token);
 	this.CustomFields = new CustomFields(this.token);
+	this.Dependencies = new Dependencies(this.token);
 }
 
 module.exports = Clickup;
