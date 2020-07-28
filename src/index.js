@@ -10,6 +10,7 @@ const Comments = require("./components/Comments");
 const CustomFields = require("./components/CustomFields");
 const Dependencies = require("./components/Dependencies");
 const SharedHierarchy = require("./components/SharedHierarchy");
+const Members = require("./components/Members");
 
 var Clickup = function (token) {
 	this.token = token;
@@ -26,6 +27,7 @@ var Clickup = function (token) {
 	this.CustomFields = new CustomFields(this.token);
 	this.Dependencies = new Dependencies(this.token);
 	this.SharedHierarchy = new SharedHierarchy(this.token);
+	this.Members = new Members(this.token);
 }
 
 module.exports = Clickup;
