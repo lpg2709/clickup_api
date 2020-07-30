@@ -58,6 +58,7 @@ To a detail documentation for each member of the module:
 
 To view the examples, you can access the [github](https://github.com/lpg2709/clickup_api) page, in folder ```testes``` you will find exemples for all member.
 
+- [Attachments](https://github.com/lpg2709/clickup_api/tree/master/testes/Attachments)
 - [Comments](https://github.com/lpg2709/clickup_api/tree/master/testes/Comments)
 - [CustomFields](https://github.com/lpg2709/clickup_api/tree/master/testes/CustomFields)
 - [Dependencies](https://github.com/lpg2709/clickup_api/tree/master/testes/Dependencies)
