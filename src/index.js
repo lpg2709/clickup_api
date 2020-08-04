@@ -12,6 +12,7 @@ const Dependencies = require("./components/Dependencies");
 const SharedHierarchy = require("./components/SharedHierarchy");
 const Members = require("./components/Members");
 const Attachments = require("./components/Attachments");
+const Checklists = require("./components/Checklists");
 
 var Clickup = function (token) {
 	this.token = token;
@@ -30,6 +31,7 @@ var Clickup = function (token) {
 	this.SharedHierarchy = new SharedHierarchy(this.token);
 	this.Members = new Members(this.token);
 	this.Attachments = new Attachments(this.token);
+	this.Checklists = new Checklists(this.token);
 }
 
 module.exports = Clickup;
