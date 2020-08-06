@@ -13,6 +13,7 @@ const SharedHierarchy = require("./components/SharedHierarchy");
 const Members = require("./components/Members");
 const Attachments = require("./components/Attachments");
 const Checklists = require("./components/Checklists");
+const Goals = require("./components/Goals");
 
 var Clickup = function (token) {
 	this.token = token;
@@ -32,6 +33,7 @@ var Clickup = function (token) {
 	this.Members = new Members(this.token);
 	this.Attachments = new Attachments(this.token);
 	this.Checklists = new Checklists(this.token);
+	this.Goals = new Goals(this.token);
 }
 
 module.exports = Clickup;
