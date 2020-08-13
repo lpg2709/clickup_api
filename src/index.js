@@ -14,6 +14,7 @@ const Members = require("./components/Members");
 const Attachments = require("./components/Attachments");
 const Checklists = require("./components/Checklists");
 const Goals = require("./components/Goals");
+const Views = require("./components/Views");
 
 var Clickup = function (token) {
 	this.token = token;
@@ -34,6 +35,7 @@ var Clickup = function (token) {
 	this.Attachments = new Attachments(this.token);
 	this.Checklists = new Checklists(this.token);
 	this.Goals = new Goals(this.token);
+	this.Views = new Views(this.token);
 }
 
 module.exports = Clickup;
