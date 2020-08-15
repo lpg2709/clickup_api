@@ -166,7 +166,7 @@ module.exports = {
 		const option = {
 			host: 'api.clickup.com',
 			port: 443,
-			path: `/api/v2/list/${params.list_id}/task?${param}`,
+			path: `/api/v2/list/${params.list_id}/task?${params.length > 1 ? param : ""}`,
 			method: "GET",
 			headers: {
 				"Authorization": token,
