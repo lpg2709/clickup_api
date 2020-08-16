@@ -16,6 +16,7 @@ const Checklists = require("./components/Checklists");
 const Goals = require("./components/Goals");
 const Views = require("./components/Views");
 const TimeTracking = require("./components/TimeTracking");
+const Guests = require("./components/Guests");
 
 var Clickup = function (token) {
 	this.token = token;
@@ -38,6 +39,7 @@ var Clickup = function (token) {
 	this.Goals = new Goals(this.token);
 	this.Views = new Views(this.token);
 	this.TimeTracking = new TimeTracking(this.token);
+	this.Guests = new Guests(this.token);
 }
 
 module.exports = Clickup;
