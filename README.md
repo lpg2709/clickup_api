@@ -8,7 +8,9 @@ The ```clickup_api``` is a wrap. Used to simplify the calls to the Clickup API.
 
 Only support ```API Token```. The ```App token``` is not supported yet.
 
-To report a issue: [Report](https://github.com/lpg2709/clickup_api/issues)
+To report a issue: [Report](https://github.com/lpg2709/clickup_api/issues).
+
+> Before reporting the problem, test the call on the [API](https://clickup.com/api) page, if it is on the Clickup API itself, report [here](https://feedback.clickup.com/).
 
 ## Install
 
@@ -40,19 +42,24 @@ const Clickup = new clickup_api("access_token");
 
 After that you can call all method of the Clickup class.
 
+To create a task:
+
+```javascript
+var data = {
+	         "name": "New Task Name",
+			 "content": "New Task Content",
+			 "status": "Open"
+		   };
+var info = await Clickup.Tasks.cretae_task("task_id", data);
+
+console.log(info);
+```
+
 ## Docs
 
 ### ClickUp API
 
 The module use all specification of the ```ClickUp API```, pleas visit [ClickUp API](https://clickup.com/api).
-
-### This module
-
-To a detail documentation for each member of the module:
-
-- [Spaces](./docs/Spaces.md)
-- [Tags](./docs/Tags.md)
-- [Tasks](./docs/Tasks.md)
 
 ## Examples
 
@@ -75,6 +82,12 @@ To view the examples, you can access the [github](https://github.com/lpg2709/cli
 - [TimeTracking](https://github.com/lpg2709/clickup_api/tree/master/testes/TimeTracking)
 - [Views](https://github.com/lpg2709/clickup_api/tree/master/testes/Views)
 - [Webhooks](https://github.com/lpg2709/clickup_api/tree/master/testes/Webhooks)
+
+## Why use HTTPS calls on EACH model ?
+
+To be easily interpreted by new ones in node and if you need to "customize" a call, it is easy to adapt it.
+
+Maybe in the future I can make a version of the module that uses the calls in a more intelligent way and reusing codes.
 
 ## License
 

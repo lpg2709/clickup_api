@@ -3,7 +3,11 @@ const Checklist = require("../models/Checklists")
 var Checklists = function (token) {
 	this.token = token;
 }
-
+/**
+ * Create a checklist in a task.
+ * @param {String} task_id Task that receives the Checklist
+ * @param {JSON} data Body request for the Checklist
+ */
 Checklists.prototype.create_checklist = function (task_id, data) {
 	token = this.token;
 	return new Promise(async function (resolve, reject) {
@@ -15,7 +19,11 @@ Checklists.prototype.create_checklist = function (task_id, data) {
 		}
 	});
 }
-
+/**
+ * Edit a checklist.
+ * @param {String} checklist_id Checklist id to be updated
+ * @param {JSON} data Body request for the update
+ */
 Checklists.prototype.edit_checklist = function (checklist_id, data) {
 	token = this.token;
 	return new Promise(async function (resolve, reject) {
@@ -27,7 +35,10 @@ Checklists.prototype.edit_checklist = function (checklist_id, data) {
 		}
 	});
 }
-
+/**
+ * Delete checklist.
+ * @param {String} checklist_id Checklist ID to delete
+ */
 Checklists.prototype.delete_checklist = function (checklist_id) {
 	token = this.token;
 	return new Promise(async function (resolve, reject) {
@@ -39,7 +50,11 @@ Checklists.prototype.delete_checklist = function (checklist_id) {
 		}
 	});
 }
-
+/**
+ * Create a checklist intem.
+ * @param {String} checklist_id Checklist ID to create a item
+ * @param {JSON} data Contenet of the item
+ */
 Checklists.prototype.create_checklist_item = function (checklist_id, data) {
 	token = this.token;
 	return new Promise(async function (resolve, reject) {
@@ -51,7 +66,12 @@ Checklists.prototype.create_checklist_item = function (checklist_id, data) {
 		}
 	});
 }
-
+/**
+ * Update an item from the checklist
+ * @param {String} checklist_id Checklist ID that contains the item
+ * @param {String} checklist_item_id Item to be updated
+ * @param {JSON} data Update content
+ */
 Checklists.prototype.edit_checklist_item = function (checklist_id, checklist_item_id, data) {
 	token = this.token;
 	return new Promise(async function (resolve, reject) {
@@ -63,7 +83,11 @@ Checklists.prototype.edit_checklist_item = function (checklist_id, checklist_ite
 		}
 	});
 }
-
+/**
+ * Deletes an item from the checklist
+ * @param {String} checklist_id Checklist ID that contains the item
+ * @param {String} checklist_item_id Item to be deleted
+ */
 Checklists.prototype.delete_checklist_item = function (checklist_id, checklist_item_id) {
 	token = this.token;
 	return new Promise(async function (resolve, reject) {

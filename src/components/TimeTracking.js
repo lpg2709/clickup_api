@@ -3,7 +3,10 @@ const TimeTracking_ = require("../models/TimeTracking")
 var TimeTracking = function (token) {
 	this.token = token;
 }
-
+/**
+ *
+ * @param {JSON} params
+ */
 TimeTracking.prototype.get_time_entries_within_date_range = function (params) {
 	token = this.token;
 	return new Promise(async function (resolve, reject) {
@@ -15,7 +18,11 @@ TimeTracking.prototype.get_time_entries_within_date_range = function (params) {
 		}
 	});
 }
-
+/**
+ *
+ * @param {String} team_id
+ * @param {String} timer_id
+ */
 TimeTracking.prototype.get_singular_time_entry = function (team_id, timer_id) {
 	token = this.token;
 	return new Promise(async function (resolve, reject) {
@@ -27,7 +34,10 @@ TimeTracking.prototype.get_singular_time_entry = function (team_id, timer_id) {
 		}
 	});
 }
-
+/**
+ *
+ * @param {String} team_id
+ */
 TimeTracking.prototype.get_running_time_entry = function (team_id) {
 	token = this.token;
 	return new Promise(async function (resolve, reject) {
@@ -39,7 +49,11 @@ TimeTracking.prototype.get_running_time_entry = function (team_id) {
 		}
 	});
 }
-
+/**
+ * Create time entry
+ * @param {String} team_id
+ * @param {JSON} data
+ */
 TimeTracking.prototype.create_time_entry = function (team_id, data) {
 	token = this.token;
 	return new Promise(async function (resolve, reject) {
@@ -51,7 +65,10 @@ TimeTracking.prototype.create_time_entry = function (team_id, data) {
 		}
 	});
 }
-
+/**
+ * Remove time entry
+ * @param {String} team_id
+ */
 TimeTracking.prototype.remove_tags_from_time_entries = function (team_id) {
 	token = this.token;
 	return new Promise(async function (resolve, reject) {
@@ -63,7 +80,10 @@ TimeTracking.prototype.remove_tags_from_time_entries = function (team_id) {
 		}
 	});
 }
-
+/**
+ * Get all time entries
+ * @param {String} team_id
+ */
 TimeTracking.prototype.get_all_tags_from_time_entries = function (team_id) {
 	token = this.token;
 	return new Promise(async function (resolve, reject) {
@@ -75,7 +95,11 @@ TimeTracking.prototype.get_all_tags_from_time_entries = function (team_id) {
 		}
 	});
 }
-
+/**
+ *
+ * @param {String} team_id
+ * @param {JSON} data
+ */
 TimeTracking.prototype.add_tags_from_time_entries = function (team_id, data) {
 	token = this.token;
 	return new Promise(async function (resolve, reject) {
@@ -87,7 +111,11 @@ TimeTracking.prototype.add_tags_from_time_entries = function (team_id, data) {
 		}
 	});
 }
-
+/**
+ *
+ * @param {String } team_id
+ * @param {JSON} data
+ */
 TimeTracking.prototype.change_tag_names_from_time_entries = function (team_id, data) {
 	token = this.token;
 	return new Promise(async function (resolve, reject) {
@@ -99,7 +127,12 @@ TimeTracking.prototype.change_tag_names_from_time_entries = function (team_id, d
 		}
 	});
 }
-
+/**
+ *
+ * @param {String} team_id
+ * @param {String} timer_id
+ * @param {JSON} data
+ */
 TimeTracking.prototype.start_time_entry = function (team_id, timer_id, data) {
 	token = this.token;
 	return new Promise(async function (resolve, reject) {
@@ -111,7 +144,10 @@ TimeTracking.prototype.start_time_entry = function (team_id, timer_id, data) {
 		}
 	});
 }
-
+/**
+ * Stop time entry
+ * @param {String} team_id
+ */
 TimeTracking.prototype.stop_time_entry = function (team_id) {
 	token = this.token;
 	return new Promise(async function (resolve, reject) {
@@ -123,7 +159,11 @@ TimeTracking.prototype.stop_time_entry = function (team_id) {
 		}
 	});
 }
-
+/**
+ * Delete time entry
+ * @param {String} team_id
+ * @param {String} timer_id
+ */
 TimeTracking.prototype.delete_time_entry = function (team_id, timer_id) {
 	token = this.token;
 	return new Promise(async function (resolve, reject) {
@@ -135,7 +175,12 @@ TimeTracking.prototype.delete_time_entry = function (team_id, timer_id) {
 		}
 	});
 }
-
+/**
+ * Update time entry
+ * @param {String} team_id
+ * @param {String} timer_id
+ * @param {JSON} data
+ */
 TimeTracking.prototype.update_time_entry = function (team_id, timer_id, data) {
 	token = this.token;
 	return new Promise(async function (resolve, reject) {

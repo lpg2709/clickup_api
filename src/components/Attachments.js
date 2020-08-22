@@ -6,7 +6,7 @@ var Attachments = function (token) {
 /**
  * Upload a file in task Clickup
  * @param {String} task_id Task_id to add the file
- * @param {Path} file_path The path of the file, use path module
+ * @param {String} file_path The path of the file, use path module
  * @param {String} file_name Name of the file on Clickup
  * @param {String} file_content_type The MIME type of the file
  * https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types

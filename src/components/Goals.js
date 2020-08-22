@@ -3,7 +3,11 @@ const Goal = require("../models/Goals");
 var Goals = function (token) {
 	this.token = token;
 }
-
+/**
+ * Create a goal
+ * @param {String} team_id Team ID where goal be created
+ * @param {JSON} data Body request for goal
+ */
 Goals.prototype.create_goal = function (team_id, data) {
 	var token = this.token;
 	return new Promise(async function (resolve, reject) {
@@ -15,7 +19,11 @@ Goals.prototype.create_goal = function (team_id, data) {
 		}
 	});
 }
-
+/**
+ * Update a goal
+ * @param {String} goal_id Goal ID to be updated
+ * @param {JSON} data Body request for goal
+ */
 Goals.prototype.update_goal = function (goal_id, data) {
 	var token = this.token;
 	return new Promise(async function (resolve, reject) {
@@ -27,7 +35,10 @@ Goals.prototype.update_goal = function (goal_id, data) {
 		}
 	});
 }
-
+/**
+ * Delete a Goal
+ * @param {String} goal_id Goal ID to be deleted
+ */
 Goals.prototype.delete_goal = function (goal_id) {
 	var token = this.token;
 	return new Promise(async function (resolve, reject) {
@@ -39,7 +50,10 @@ Goals.prototype.delete_goal = function (goal_id) {
 		}
 	});
 }
-
+/**
+ * Get all goals of a team
+ * @param {String} team_id Team ID where search
+ */
 Goals.prototype.get_goals = function (team_id) {
 	var token = this.token;
 	return new Promise(async function (resolve, reject) {
@@ -51,8 +65,10 @@ Goals.prototype.get_goals = function (team_id) {
 		}
 	});
 }
-
-
+/**
+ * Get info about a goal
+ * @param {String} goal_id Goal ID to get info
+ */
 Goals.prototype.get_goal = function (goal_id) {
 	var token = this.token;
 	return new Promise(async function (resolve, reject) {
@@ -64,7 +80,11 @@ Goals.prototype.get_goal = function (goal_id) {
 		}
 	});
 }
-
+/**
+ * Create a key result
+ * @param {String} goal_id Goal ID where key be created
+ * @param {JSON} data Body request for create a key
+ */
 Goals.prototype.create_key_result = function (goal_id, data) {
 	var token = this.token;
 	return new Promise(async function (resolve, reject) {
@@ -76,7 +96,11 @@ Goals.prototype.create_key_result = function (goal_id, data) {
 		}
 	});
 }
-
+/**
+ * Update a key result
+ * @param {String} key_result_id Key result ID to be updated
+ * @param {JSON} data Body request for update a key
+ */
 Goals.prototype.edit_key_result = function (key_result_id, data) {
 	var token = this.token;
 	return new Promise(async function (resolve, reject) {
@@ -88,7 +112,10 @@ Goals.prototype.edit_key_result = function (key_result_id, data) {
 		}
 	});
 }
-
+/**
+ * Delete a key result
+ * @param {String} key_result_id Key result ID to be deleted
+ */
 Goals.prototype.delete_key_result = function (key_result_id) {
 	var token = this.token;
 	return new Promise(async function (resolve, reject) {

@@ -3,7 +3,9 @@ const Team = require("../models/Teams")
 var Teams = function (token) {
 	this.token = token;
 }
-
+/**
+ * See all teams
+ */
 Teams.prototype.get_teams = function () {
 	token = this.token;
 	return new Promise(async function (resolve, reject) {

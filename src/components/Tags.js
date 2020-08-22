@@ -3,7 +3,10 @@ const Tag = require("../models/Tags");
 var Tags = function(token){
 	this.token = token;
 }
-
+/**
+ * Get all tags in space
+ * @param {String} space_id Space ID
+ */
 Tags.prototype.get_space_tag = function(space_id){
 	var token = this.token;
 	return new Promise(async function (resolve, reject) {
@@ -15,7 +18,11 @@ Tags.prototype.get_space_tag = function(space_id){
 		}
 	});
 }
-
+/**
+ * Create a tag
+ * @param {String} space_id Space ID where be created
+ * @param {JSON} data Body request for tag
+ */
 Tags.prototype.create_space_tag = function (space_id, data){
 	var token = this.token;
 	return new Promise(async function (resolve, reject) {
@@ -27,7 +34,12 @@ Tags.prototype.create_space_tag = function (space_id, data){
 		}
 	});
 }
-
+/**
+ * Edit a tag in space
+ * @param {String} space_id Space ID where the tag is
+ * @param {String} tag_name Tag to be updated
+ * @param {JSPON} data Body request for tag
+ */
 Tags.prototype.edit_space_tag = function (space_id, tag_name, data) {
 	var token = this.token;
 	return new Promise(async function (resolve, reject) {
@@ -39,7 +51,11 @@ Tags.prototype.edit_space_tag = function (space_id, tag_name, data) {
 		}
 	});
 }
-
+/**
+ * Delete a tag from space
+ * @param {String} space_id Space ID where the tag is
+ * @param {JSON} tag_name Tag to be deleted
+ */
 Tags.prototype.delete_space_tag = function (space_id, tag_name) {
 	var token = this.token;
 	return new Promise(async function (resolve, reject) {
@@ -51,7 +67,11 @@ Tags.prototype.delete_space_tag = function (space_id, tag_name) {
 		}
 	});
 }
-
+/**
+ * Add a tag into a task
+ * @param {String} task_id Task ID where tag be created
+ * @param {String} tag_name Name of the tag
+ */
 Tags.prototype.add_tag_to_task = function (task_id, tag_name) {
 	var token = this.token;
 	return new Promise(async function (resolve, reject) {
@@ -63,7 +83,11 @@ Tags.prototype.add_tag_to_task = function (task_id, tag_name) {
 		}
 	});
 }
-
+/**
+ * Remove a tag from task
+ * @param {String} task_id Task where the tag is
+ * @param {String} tag_name Tag to be removed
+ */
 Tags.prototype.remove_tag_from_task = function (task_id, tag_name) {
 	var token = this.token;
 	return new Promise(async function (resolve, reject) {
