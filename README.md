@@ -46,10 +46,10 @@ To create a task:
 
 ```javascript
 var data = {
-	         "name": "New Task Name",
-			 "content": "New Task Content",
-			 "status": "Open"
-		   };
+    "name": "New Task Name",
+    "content": "New Task Content",
+    "status": "Open"
+    };
 var info = await Clickup.Tasks.cretae_task("task_id", data);
 
 console.log(info);
