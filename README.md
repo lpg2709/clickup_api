@@ -1,6 +1,6 @@
 # [clickup_api](https://clickup.com/)
 
-No oficial module for [ClickUp API](https://clickup.com/api).
+This module is not official [ClickUp API](https://clickup.com/api).
 
 The ```clickup_api``` is a wrap. Used to simplify the calls to the Clickup API.
 
