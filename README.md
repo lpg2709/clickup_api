@@ -83,12 +83,6 @@ To view the examples, you can access the [github](https://github.com/lpg2709/cli
 - [Views](https://github.com/lpg2709/clickup_api/tree/master/testes/Views)
 - [Webhooks](https://github.com/lpg2709/clickup_api/tree/master/testes/Webhooks)
 
-## Why use HTTPS calls on EACH model ?
-
-To be easily interpreted by new ones in node and if you need to "customize" a call, it is easy to adapt it.
-
-Maybe in the future I can make a version of the module that uses the calls in a more intelligent way and reusing codes.
-
 ## License
 
 [MIT](LICENSE)
