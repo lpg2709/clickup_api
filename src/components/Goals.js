@@ -1,4 +1,4 @@
-const Goal = require("../models/Goals");
+const Requests = require("../utils/requests");
 
 var Goals = function (token) {
 	this.token = token;
@@ -12,7 +12,7 @@ Goals.prototype.create_goal = function (team_id, data) {
 	var token = this.token;
 	return new Promise(async function (resolve, reject) {
 		try {
-			var res = await Goal.create_goal(team_id, data, token)
+			var res = await Requests.https_clickupapi_post(`/api/v2/team/${team_id}/goal`, data, token);
 			resolve(res);
 		} catch (err) {
 			reject(err);
@@ -28,7 +28,7 @@ Goals.prototype.update_goal = function (goal_id, data) {
 	var token = this.token;
 	return new Promise(async function (resolve, reject) {
 		try {
-			var res = await Goal.update_goal(goal_id, data, token);
+			var res = await Requests.https_clickupapi_put(`/api/v2/goal/${goal_id}`, data, token);
 			resolve(res);
 		} catch (err) {
 			reject(err);
@@ -43,7 +43,7 @@ Goals.prototype.delete_goal = function (goal_id) {
 	var token = this.token;
 	return new Promise(async function (resolve, reject) {
 		try {
-			var res = await Goal.delete_goal(goal_id, token);
+			var res = await Requests.https_clickupapi_delete(`/api/v2/goal/${goal_id}`, token);
 			resolve(res);
 		} catch (err) {
 			reject(err);
@@ -58,7 +58,7 @@ Goals.prototype.get_goals = function (team_id) {
 	var token = this.token;
 	return new Promise(async function (resolve, reject) {
 		try {
-			var res = await Goal.get_goals(team_id, token);
+			var res = await Requests.https_clickupapi_get(`/api/v2/team/${team_id}/goal`, token);
 			resolve(res);
 		} catch (err) {
 			reject(err);
@@ -73,7 +73,7 @@ Goals.prototype.get_goal = function (goal_id) {
 	var token = this.token;
 	return new Promise(async function (resolve, reject) {
 		try {
-			var res = await Goal.get_goal(goal_id, token);
+			var res = await Requests.https_clickupapi_get(`/api/v2/goal/${goal_id}`, token);
 			resolve(res);
 		} catch (err) {
 			reject(err);
@@ -89,7 +89,7 @@ Goals.prototype.create_key_result = function (goal_id, data) {
 	var token = this.token;
 	return new Promise(async function (resolve, reject) {
 		try {
-			var res = await Goal.create_key_result(goal_id, data, token)
+			var res = await Requests.https_clickupapi_post(`/api/v2/goal/${goal_id}/key_result`, data, token);
 			resolve(res);
 		} catch (err) {
 			reject(err);
@@ -105,7 +105,7 @@ Goals.prototype.edit_key_result = function (key_result_id, data) {
 	var token = this.token;
 	return new Promise(async function (resolve, reject) {
 		try {
-			var res = await Goal.edit_key_result(key_result_id, data, token);
+			var res = await Requests.https_clickupapi_put(`/api/v2/key_result/${key_result_id}`, data, token);
 			resolve(res);
 		} catch (err) {
 			reject(err);
@@ -120,7 +120,7 @@ Goals.prototype.delete_key_result = function (key_result_id) {
 	var token = this.token;
 	return new Promise(async function (resolve, reject) {
 		try {
-			var res = await Goal.delete_key_result(key_result_id, token);
+			var res = await Requests.https_clickupapi_delete(`/api/v2/key_result/${key_result_id}`, token);
 			resolve(res);
 		} catch (err) {
 			reject(err);

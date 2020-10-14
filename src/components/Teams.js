@@ -1,4 +1,4 @@
-const Team = require("../models/Teams")
+const Requests = require("../utils/requests");
 
 var Teams = function (token) {
 	this.token = token;
@@ -10,7 +10,7 @@ Teams.prototype.get_teams = function () {
 	token = this.token;
 	return new Promise(async function (resolve, reject) {
 		try {
-			var res = await Team.get_teams(token);
+			var res = await Requests.https_clickupapi_get(`/api/v2/team`, token);
 			resolve(res);
 		} catch (err) {
 			reject(err);

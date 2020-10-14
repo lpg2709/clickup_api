@@ -1,4 +1,4 @@
-const Task = require("../models/Tasks")
+const Requests = require("../utils/requests");
 
 var Tasks = function (token) {
 	this.token = token;
@@ -12,7 +12,7 @@ Tasks.prototype.cretae_task = function (list_id, data) {
 	token = this.token;
 	return new Promise(async function (resolve, reject) {
 		try {
-			var res = await Task.create_taks(list_id, data, token);
+			var res = await Requests.https_clickupapi_post(`/api/v2/list/${list_id}/task`, data, token);
 			resolve(res);
 		} catch (err) {
 			reject(err);
@@ -28,7 +28,7 @@ Tasks.prototype.update_task = function (task_id, data) {
 	token = this.token
 	return new Promise(async function (resolve, reject) {
 		try {
-			var res = await Task.update_task(task_id, data, token);
+			var res = await Requests.https_clickupapi_put(`/api/v2/task/${task_id}`, data, token);
 			resolve(res);
 		} catch (err) {
 			reject(err);
@@ -43,7 +43,7 @@ Tasks.prototype.delete_task = function (task_id) {
 	token = this.token
 	return new Promise(async function (resolve, reject) {
 		try {
-			var res = await Task.delete_task(task_id, token);
+			var res = await Requests.https_clickupapi_delete(`/api/v2/task/${task_id}`, token);
 			resolve(res);
 		} catch (err) {
 			reject(err);
@@ -58,7 +58,7 @@ Tasks.prototype.get_task = function (task_id) {
 	token = this.token;
 	return new Promise(async function (resolve, reject) {
 		try {
-			var res = await Task.get_task(task_id, token);
+			var res = await Requests.https_clickupapi_get(`/api/v2/task/${task_id}`, token);
 			resolve(res);
 		} catch (err) {
 			reject(err);
@@ -73,7 +73,8 @@ Tasks.prototype.get_tasks = function (params) {
 	token = this.token;
 	return new Promise(async function (resolve, reject) {
 		try {
-			var res = await Task.get_tasks(params, token);
+			let param = genParams(params, ["list_id", "archived"]);
+			var res = await Requests.https_clickupapi_get(`/api/v2/list/${params.list_id}/task?${params.length > 1 ? param : ""}`, token);
 			resolve(res);
 		} catch (err) {
 			reject(err);
@@ -88,7 +89,8 @@ Tasks.prototype.get_team_tasks = function (params) {
 	token = this.token;
 	return new Promise(async function (resolve, reject) {
 		try {
-			var res = await Task.get_team_tasks(params, token);
+			let param = genParams(params, ["list_id", "archived"]);
+			var res = await Requests.https_clickupapi_get(`/api/v2/team/${params.team_id}/task?${param}`, token);
 			resolve(res);
 		} catch (err) {
 			reject(err);

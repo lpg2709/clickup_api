@@ -1,4 +1,4 @@
-const Attachment = require("../models/Attachments")
+const Attachment = require("../utils/Attachments")
 
 var Attachments = function (token) {
 	this.token = token;
