@@ -1,14 +1,52 @@
-var https = require("https");
-var crypto = require("crypto");
-const fs = require("fs");
+const https = require("https");
 
 module.exports = {
-	create_checklist: function (task_id, data, token) {
+
+	https_clickupapi_get: function (path, token) {
+		const option = {
+			host: 'api.clickup.com',
+			port: 443,
+			path: path,
+			method: "GET",
+			headers: {
+				"Authorization": token,
+				"Content-Type": "application/json"
+			}
+		}
+		return new Promise(function (resolve, reject) {
+			const req = https.request(option, function (res) {
+				var str = '';
+				if (res.statusCode != 200) {
+					reject(res.statusCode);
+				}
+
+				res.on('data', function (chunk) {
+					str += chunk;
+				});
+
+				res.on('end', function () {
+					resolve(JSON.parse(str));
+				});
+
+				res.on('error', function (err) {
+					reject(err);
+				});
+			});
+
+			req.on('error', function (err) {
+				reject(err);
+			});
+
+			req.end();
+		});
+	},
+
+	https_clickupapi_post: function (path, data, token) {
 		data = JSON.stringify(data);
 		const option = {
 			host: 'api.clickup.com',
 			port: 443,
-			path: `/api/v2/task/${task_id}/checklist`,
+			path: path,
 			method: "POST",
 			headers: {
 				"Authorization": token,
@@ -42,12 +80,13 @@ module.exports = {
 			req.end();
 		});
 	},
-	edit_checklist: function (checklist_id, data, token) {
+
+	https_clickupapi_put: function (path, data, token) {
 		data = JSON.stringify(data);
 		const option = {
 			host: 'api.clickup.com',
 			port: 443,
-			path: `/api/v2/checklist/${checklist_id}`,
+			path: path,
 			method: "PUT",
 			headers: {
 				"Authorization": token,
@@ -81,11 +120,12 @@ module.exports = {
 			req.end();
 		});
 	},
-	delete_checklist: function (checklist_id, token) {
+
+	https_clickupapi_delete: function (path, token) {
 		const option = {
 			host: 'api.clickup.com',
 			port: 443,
-			path: `/api/v2/checklist/${checklist_id}`,
+			path: path,
 			method: "DELETE",
 			headers: {
 				"Authorization": token,
@@ -115,125 +155,7 @@ module.exports = {
 			req.on('error', function (err) {
 				reject(err);
 			});
-			req.write("");
-			req.end();
-		});
-	},
-	create_checklist_item: function (checklist_id, data, token) {
-		data = JSON.stringify(data);
-		const option = {
-			host: 'api.clickup.com',
-			port: 443,
-			path: `/api/v2/checklist/${checklist_id}/checklist_item`,
-			method: "POST",
-			headers: {
-				"Authorization": token,
-				"Content-Type": "application/json"
-			}
-		}
-		return new Promise(function (resolve, reject) {
-			const req = https.request(option, function (res) {
-				var str = '';
-				if (res.statusCode != 200) {
-					reject(res.statusCode);
-				}
-
-				res.on('data', function (chunk) {
-					str += chunk;
-				});
-
-				res.on('end', function () {
-					resolve(JSON.parse(str));
-				});
-
-				res.on('error', function (err) {
-					reject(err);
-				});
-			});
-
-			req.on('error', function (err) {
-				reject(err);
-			});
-			req.write(data);
-			req.end();
-		});
-	},
-	edit_checklist_item: function (checklist_id, checklist_item_id, data, token) {
-		data = JSON.stringify(data);
-		const option = {
-			host: 'api.clickup.com',
-			port: 443,
-			path: `/api/v2/checklist/${checklist_id}/checklist_item/${checklist_item_id}`,
-			method: "PUT",
-			headers: {
-				"Authorization": token,
-				"Content-Type": "application/json"
-			}
-		}
-		return new Promise(function (resolve, reject) {
-			const req = https.request(option, function (res) {
-				var str = '';
-				if (res.statusCode != 200) {
-					reject(res.statusCode);
-				}
-
-				res.on('data', function (chunk) {
-					str += chunk;
-				});
-
-				res.on('end', function () {
-					resolve(JSON.parse(str));
-				});
-
-				res.on('error', function (err) {
-					reject(err);
-				});
-			});
-
-			req.on('error', function (err) {
-				reject(err);
-			});
-			req.write(data);
-			req.end();
-		});
-	},
-	delete_checklist_item: function (checklist_id, checklist_item_id, token) {
-		const option = {
-			host: 'api.clickup.com',
-			port: 443,
-			path: `/api/v2/checklist/${checklist_id}/checklist_item/${checklist_item_id}`,
-			method: "DELETE",
-			headers: {
-				"Authorization": token,
-				"Content-Type": "application/json"
-			}
-		}
-		return new Promise(function (resolve, reject) {
-			const req = https.request(option, function (res) {
-				var str = '';
-				if (res.statusCode != 200) {
-					reject(res.statusCode);
-				}
-
-				res.on('data', function (chunk) {
-					str += chunk;
-				});
-
-				res.on('end', function () {
-					resolve(JSON.parse(str));
-				});
-
-				res.on('error', function (err) {
-					reject(err);
-				});
-			});
-
-			req.on('error', function (err) {
-				reject(err);
-			});
-			req.write("");
 			req.end();
 		});
 	}
-
 }
