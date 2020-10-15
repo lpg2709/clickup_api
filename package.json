@@ -1,6 +1,6 @@
 {
   "name": "clickup_api",
-  "version": "1.0.0",
+  "version": "1.0.43",
   "description": "No oficial module for ClickUp API",
   "main": "src/index.js",
   "scripts": {
