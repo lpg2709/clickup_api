@@ -11,7 +11,7 @@ async function main(){
 
 	try{
 
-		var info = await Clickup.Tasks.cretae_task("task_id", data);
+		var info = await Clickup.Tasks.cretae_task("list_id", data);
 		console.log(info);
 	}catch(err){
 		console.log(err)

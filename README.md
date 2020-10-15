@@ -50,7 +50,7 @@ var data = {
     "content": "New Task Content",
     "status": "Open"
     };
-var info = await Clickup.Tasks.cretae_task("task_id", data);
+var info = await Clickup.Tasks.cretae_task("list_id", data);
 
 console.log(info);
 ```
