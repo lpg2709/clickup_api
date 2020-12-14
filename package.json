@@ -1,6 +1,6 @@
 {
   "name": "clickup_api",
-  "version": "1.0.46",
+  "version": "1.0.47",
   "description": "No oficial module for ClickUp API",
   "main": "src/index.js",
   "scripts": {
@@ -8,5 +8,5 @@
   },
   "keywords": ["api", "clickup","module"],
   "author": "lpg2709",
-  "license": "ISC"
+  "license": "MIT"
 }
