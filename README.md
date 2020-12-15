@@ -1,5 +1,10 @@
 # [clickup_api](https://clickup.com/)
 
+[![npm](https://img.shields.io/npm/v/clickup_api?style=flat-square)](https://www.npmjs.com/package/clickup_api)
+![npm](https://img.shields.io/npm/dw/clickup_api?style=flat-square&)
+![NPM](https://img.shields.io/npm/l/clickup_api?style=flat-square)
+![GitHub last commit](https://img.shields.io/github/last-commit/lpg2709/clickup_api?style=flat-square)
+
 This module is not official [ClickUp API](https://clickup.com/api).
 
 The ```clickup_api``` is a wrap. Used to simplify the calls to the Clickup API.
