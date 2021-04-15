@@ -9,7 +9,7 @@ var Tasks = function (token) {
  * @param {String} list_id List ID where task be created
  * @param {JSON} data Body request for Task
  */
-Tasks.prototype.cretae_task = function (list_id, data) {
+Tasks.prototype.create_task = function (list_id, data) {
 	token = this.token;
 	return new Promise(async function (resolve, reject) {
 		try {
