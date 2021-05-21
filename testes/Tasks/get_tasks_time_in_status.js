@@ -5,14 +5,13 @@ async function main(){
 	const clickup = new clickup_api("access_token");
 
 	var param = {
-		"task_id": "list_id",
-		// "custom_task_ids": true,
-		// "team_id": "123",
-		// "include_subtasks": true
+		"task_id": "123",
+//      "custom_task_ids": "0",
+// 		"team_id": "123",
 	}
 
 	try{
-		var info = await clickup.Tasks.get_task(param);
+		var info = await clickup.Tasks.get_tasks_time_in_status(param);
 		console.log(info);
 	}catch(err){
 		console.log(err)

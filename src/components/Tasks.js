@@ -55,11 +55,12 @@ Tasks.prototype.delete_task = function (task_id) {
  * Get info about a Task
  * @param {String} task_id Task ID
  */
-Tasks.prototype.get_task = function (task_id) {
+Tasks.prototype.get_task = function (params) {
 	token = this.token;
 	return new Promise(async function (resolve, reject) {
 		try {
-			var res = await Requests.https_clickupapi_get(`/api/v2/task/${task_id}`, token);
+			let param = genParams(params, ["task_id"]);
+			var res = await Requests.https_clickupapi_get(`/api/v2/task/${params.task_id}/?${params.length > 1 ? param : ""}`, token);
 			resolve(res);
 		} catch (err) {
 			reject(err);
@@ -81,7 +82,60 @@ Tasks.prototype.get_tasks = function (params) {
 			reject(err);
 		}
 	});
-}/**
+}
+
+/**
+ * Get Filtered Team Tasks
+ * @param {JSON} params Request parameters in JSON format
+ */
+Tasks.prototype.get_filtered_team_tasks  = function (params) {
+	token = this.token;
+	return new Promise(async function (resolve, reject) {
+		try {
+			let param = genParams(params, ["team_Id", "page"]);
+			var res = await Requests.https_clickupapi_get(`/api/v2/team/${params.team_id}/task?${params.length > 1 ? param : ""}`, token);
+			resolve(res);
+		} catch (err) {
+			reject(err);
+		}
+	});
+}
+
+/**
+ * Get Task's Time in Status
+ * @param {JSON} params Request parameters in JSON format
+ */
+Tasks.prototype.get_tasks_time_in_status = function (params) {
+	token = this.token;
+	return new Promise(async function (resolve, reject) {
+		try {
+			let param = genParams(params, ["task_id"]);
+			var res = await Requests.https_clickupapi_get(`/api/v2/task/${params.task_id}/time_in_status?${params.length > 1 ? param : ""}`, token);
+			resolve(res);
+		} catch (err) {
+			reject(err);
+		}
+	});
+}
+
+/**
+ * Get Bulk Task's Time in Status
+ * @param {JSON} params Request parameters in JSON format
+ */
+Tasks.prototype.get_bulk_tasks_time_in_status = function (params) {
+	token = this.token;
+	return new Promise(async function (resolve, reject) {
+		try {
+			let param = genParams(params, ["task_ids"]);
+			var res = await Requests.https_clickupapi_get(`/api/v2/task/bulk_time_in_status/task_ids?${params.task_ids}&${params.length > 1 ? param : ""}`, token);
+			resolve(res);
+		} catch (err) {
+			reject(err);
+		}
+	});
+}
+
+/**
  * Get Tasks from a team
  * @param {JSON} params Request parameters in JSON format
  */
