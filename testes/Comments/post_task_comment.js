@@ -11,7 +11,7 @@ const clickup_api = require("../../src/index");
 	}
 
 	try {
-		var info = await Clickup.Comments.post_task_comment("task_id", data);
+		var info = await Clickup.Comments.create_task_comment("task_id", data);
 		console.log(info);
 	} catch (err) {
 		console.log(err)

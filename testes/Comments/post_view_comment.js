@@ -10,7 +10,7 @@ const clickup_api = require("../../src/index");
 	}
 
 	try {
-		var info = await Clickup.Comments.post_view_comment("view_id", data);
+		var info = await Clickup.Comments.create_view_comment("view_id", data);
 		console.log(info);
 	} catch (err) {
 		console.log(err)

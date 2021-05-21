@@ -8,7 +8,7 @@ var Comments = function (token) {
  * @param {String} task_id Tesk ID that will receive comment
  * @param {JSON} data Body request for the comment
  */
-Comments.prototype.post_task_comment = function (task_id, data) {
+Comments.prototype.create_task_comment = function (task_id, data) {
 	var token = this.token;
 	return new Promise(async function (resolve, reject) {
 		try {
@@ -24,7 +24,7 @@ Comments.prototype.post_task_comment = function (task_id, data) {
  * @param {String} view_id View ID that will receive commet
  * @param {JSON} data Body request for the comment
  */
-Comments.prototype.post_view_comment = function (view_id, data) {
+Comments.prototype.create_view_comment = function (view_id, data) {
 	var token = this.token;
 	return new Promise(async function (resolve, reject) {
 		try {
@@ -40,7 +40,7 @@ Comments.prototype.post_view_comment = function (view_id, data) {
  * @param {String} list_id List id that will receive comment
  * @param {JSON} data Body request for the comment
  */
-Comments.prototype.post_list_comment = function (list_id, data) {
+Comments.prototype.create_list_comment = function (list_id, data) {
 	var token = this.token;
 	return new Promise(async function (resolve, reject) {
 		try {
