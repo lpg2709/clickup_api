@@ -85,6 +85,7 @@ To view the examples, you can access the [github](https://github.com/lpg2709/cli
 - [TaskTemplates](https://github.com/lpg2709/clickup_api/tree/master/testes/TaskTemplates)
 - [Teams](https://github.com/lpg2709/clickup_api/tree/master/testes/Teams)
 - [TimeTracking](https://github.com/lpg2709/clickup_api/tree/master/testes/TimeTracking)
+- [Users](https://github.com/lpg2709/clickup_api/tree/master/testes/Users)
 - [Views](https://github.com/lpg2709/clickup_api/tree/master/testes/Views)
 - [Webhooks](https://github.com/lpg2709/clickup_api/tree/master/testes/Webhooks)
 
