@@ -15,6 +15,7 @@ const Task = require('./components/Tasks');
 const TaskTemplates = require("./components/TaskTemplates");
 const Teams = require("./components/Teams");
 const TimeTracking = require("./components/TimeTracking");
+const Users = require("./components/Users");
 const Views = require("./components/Views");
 const Webhooks = require("./components/Webhooks");
 
@@ -38,6 +39,7 @@ var Clickup = function (token) {
 	this.TaskTemplates = new TaskTemplates(this.token);
 	this.Teams = new Teams(this.token);
 	this.TimeTracking = new TimeTracking(this.token);
+	this.Users = new Users(this.token);
 	this.Views = new Views(this.token);
 	this.Webhooks = new Webhooks(this.token);
 }
