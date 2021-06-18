@@ -73,3 +73,5 @@ Users.prototype.get_user = function (team_id, user_id) {
 		}
 	});
 }
+
+module.exports = Users;
