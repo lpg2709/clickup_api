@@ -113,5 +113,21 @@ Lists.prototype.get_list = function (list_id) {
 		}
 	});
 }
+/**
+ * Add a task to an additional List
+ * @param {String} list_id List ID
+ * @param {String} task_id Task ID
+ */
+ Lists.prototype.add_task_to_list = function (list_id, task_id) {
+	var token = this.token;
+	return new Promise(async function (resolve, reject) {
+		try {
+			var res = await Requests.https_clickupapi_post(`/api/v2/list/${list_id}/task/${task_id}`, token);
+			resolve(res);
+		} catch (err) {
+			reject(err);
+		}
+	});
+}
 
 module.exports = Lists;
