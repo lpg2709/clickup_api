@@ -135,7 +135,7 @@ module.exports = {
 		return new Promise(function (resolve, reject) {
 			const req = https.request(option, function (res) {
 				var str = '';
-				if (res.statusCode != 200) {
+				if (res.statusCode != 204) {
 					reject(res.statusCode);
 				}
 
