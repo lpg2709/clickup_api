@@ -5,13 +5,129 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.0.46] - 2020-10-15
 
-commit: dbcced637ceaa37cb978c5696aaa0e291bc3e601
+## [1.2.0] - XXXX-XX-XX - xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+### Added
+
+- Roles member to package
+- Roles.get_custom_roles
+- Teams.create_team
+- Teams.update_team
+- Teams.delete_team
+- Teams.get_workspace_seats
+
+### Changed
+
+### Fixed
+
+
+## [1.1.4] - 2022-11-12 - a560184edbcc7a0a267165f93139e0e6f1c25b41
+
+### Added
+
+- Contributors ref to package.json
+
+### Changed
+
+### Fixed
+
+
+## [1.1.3] - 2022-11-12 - 21c0452af4ae7d0cffd96ccf0b4389e13b375f32
+
+### Added
+
+- Method add_task_to_list  for Lists - by [@InSandBox](https://github.com/InSandBox)
+
+### Changed
+
+### Fixed
+
+- Status code return in request - by [@InSandBox](https://github.com/InSandBox)
+
+
+## [1.1.2] - 2021-11-08 - 01b6d24e30a38a2bb238ac1edb4ea3f0c62948b5
+
+### Added
+
+### Changed
+
+### Fixed
+
+- Import genParams for TimeTracking - by [@jp4tey](https://github.com/jp4tey)
+
+## [1.1.1] - 2021-05-20 - 3bd296dd052e0492aee54e7a38a454507caec93f
+
+### Added
+
+### Changed
+
+### Fixed
+
+- Export the User class for package - by [@csouza1995](https://github.com/csouza1995)
+
+## [1.1.0] - 2021-05-20 - 7d418debf7a38d1ea7e7ee48383b594093c515c7
+
+### Added
+
+- Method get_filtered_team_tasks for Tasks
+- Method get_tasks_time_in_status for Tasks
+- Method get_bulk_tasks_time_in_status for Tasks
+- Method get_filtered_team_tasks for Tasks
+- Users as member of package
+- Users.invite_user_to_workspace
+- Users.edit_user_on_workspace
+- Users.remove_user_from_workspace
+- Users.get_user
+
+### Changed
+
+- Comments methods names to be equals of the API doc
+- Get task use params
+
+### Fixed
+
+
+## [1.0.49] - 2021-04-19 - cc50a456a106b1bc20b4f61e9e021bbbeeb8fd66
+
+### Added
+
+### Changed
+
+### Fixed
+
+- Misspelling from "cretae_task" to "create_task" - by [@accountantKev](https://github.com/accountantKev)
+
+
+## [1.0.48] - 2020-12-15 - 1258ad64d83c6909f071d8256b7389504c68c2da
+
+### Added
+
+- Some cool info into README
+
+### Changed
+
+### Fixed
+
+
+## [1.0.47] - 2020-12-14 - fc438cfa26e7528ff53e1a5b528ddf3d4e815ab1
+
+### Added
+
+### Changed
+
+### Fixed
+
+- Import genParams for Tasks
+- Licens name into package.json
+
+
+## [1.0.46] - 2020-10-15 - dbcced637ceaa37cb978c5696aaa0e291bc3e601
 
 ### Added
 
 - Common object to store the token
+- Testes for all methods
 - Attachments.post_task_attachment
 - Checklists.create_checklist
 - Checklists.edit_checklist
