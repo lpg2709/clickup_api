@@ -1,5 +1,5 @@
 # [clickup_api](https://clickup.com/)
- 
+
 [![npm](https://img.shields.io/npm/v/clickup_api?style=flat-square)](https://www.npmjs.com/package/clickup_api)
 ![npm](https://img.shields.io/npm/dw/clickup_api?style=flat-square&)
 ![NPM](https://img.shields.io/npm/l/clickup_api?style=flat-square)
@@ -8,6 +8,17 @@
 This module is not official [ClickUp API](https://clickup.com/api).
 
 The ```clickup_api``` is a wrap. Used to simplify the calls to the Clickup API.
+
+## Table of contents
+
+- [Issues](#issues)
+- [Install](#install)
+- [Quick Start](#quick-start)
+- [Docs](#docs)
+- [Examples](#examples)
+- [Changes log](#changes-log)
+- [Contributing](#contributing)
+- [License](#license)
 
 ## Issues
 
@@ -88,6 +99,14 @@ To view the examples, you can access the [github](https://github.com/lpg2709/cli
 - [Users](https://github.com/lpg2709/clickup_api/tree/master/testes/Users)
 - [Views](https://github.com/lpg2709/clickup_api/tree/master/testes/Views)
 - [Webhooks](https://github.com/lpg2709/clickup_api/tree/master/testes/Webhooks)
+
+## Changes log
+
+All changes by version can be see on [CHANGELOG.md](https://github.com/lpg2709/clickup_api/blob/master/CHANGELOG) on [github](https://github.com/lpg2709/clickup_api)
+
+## Contributing
+
+See [CONTRIBUTING.md](https://github.com/lpg2709/clickup_api/blob/master/CONTRIBUTING.md) to instruction for help the package.
 
 ## License
 

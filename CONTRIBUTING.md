@@ -35,6 +35,6 @@ and so on.
 
 ## And finely
 
-All help is welcome, developing, opening questions, commenting or criticizing and using.
+All help is welcome, developing, opening issues, commenting or criticizing and using.
 
 Thanks 🧙
