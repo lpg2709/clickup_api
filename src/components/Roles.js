@@ -21,3 +21,5 @@ Roles.prototype.get_custom_roles = function(team_id, params){
 		}
 	});
 }
+
+module.exports = Roles;
