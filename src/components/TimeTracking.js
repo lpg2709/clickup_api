@@ -194,5 +194,21 @@ TimeTracking.prototype.update_time_entry = function (team_id, timer_id, data) {
 		}
 	});
 }
+/**
+ * Get time entry history
+ * @param {String} team_id
+ * @param {String} timer_id
+ */
+TimeTracking.prototype.get_time_entry_history = function (team_id, timer_id) {
+	token = this.token;
+	return new Promise(async function (resolve, reject) {
+		try {
+			var res = await Requests.https_clickupapi_get(`/api/v2/team/${team_id}/time_entries/${timer_id}/history`, token);
+			resolve(res);
+		} catch (err) {
+			reject(err);
+		}
+	});
+}
 
 module.exports = TimeTracking;
