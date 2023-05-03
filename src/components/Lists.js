@@ -129,5 +129,21 @@ Lists.prototype.get_list = function (list_id) {
 		}
 	});
 }
+/**
+ * Remove Task From List
+ * @param {String} list_id List ID where task on
+ * @param {String} task_id Task ID to be deleted
+ */
+Lists.prototype.remove_task_from_list = function (list_id, task_id) {
+	var token = this.token;
+	return new Promise(async function (resolve, reject) {
+		try {
+			var res = await Requests.https_clickupapi_delete(`/api/v2/list/${list_id}/task/${task_id}`, token);
+			resolve(res);
+		} catch (err) {
+			reject(err);
+		}
+	});
+}
 
 module.exports = Lists;
