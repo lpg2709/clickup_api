@@ -40,7 +40,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - On get_time_entries_within_date_range params length is undefined, not an array:
-Pull request [#6](https://github.com/lpg2709/clickup_api/pull/6) from [mordygparency](https://github.com/mordygparency)
+Pull request [#6](https://github.com/lpg2709/clickup_api/pull/6) from [@mordygparency](https://github.com/mordygparency)
 
 ## [1.1.4] - 2022-11-12 - a560184edbcc7a0a267165f93139e0e6f1c25b41
 
