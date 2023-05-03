@@ -65,7 +65,7 @@ var data = {
     "name": "New Task Name",
     "content": "New Task Content",
     "status": "Open"
-    };
+};
 var info = await Clickup.Tasks.create_task("list_id", data);
 
 console.log(info);
@@ -87,11 +87,15 @@ To view the examples, you can access the [github](https://github.com/lpg2709/cli
 - [CustomFields](https://github.com/lpg2709/clickup_api/tree/master/exemples/CustomFields)
 - [Dependencies](https://github.com/lpg2709/clickup_api/tree/master/exemples/Dependencies)
 - [Folders](https://github.com/lpg2709/clickup_api/tree/master/exemples/Folders)
+- [Goals](https://github.com/lpg2709/clickup_api/tree/master/exemples/Goals)
 - [Lists](https://github.com/lpg2709/clickup_api/tree/master/exemples/Lists)
 - [Members](https://github.com/lpg2709/clickup_api/tree/master/exemples/Members)
+- [Roles](https://github.com/lpg2709/clickup_api/tree/master/exemples/Roles)
 - [SharedHierarchy](https://github.com/lpg2709/clickup_api/tree/master/exemples/SharedHierarchy)
 - [Spaces](https://github.com/lpg2709/clickup_api/tree/master/exemples/Spaces)
 - [Tags](https://github.com/lpg2709/clickup_api/tree/master/exemples/Tags)
+- [TaskCheckList](https://github.com/lpg2709/clickup_api/tree/master/exemples/TaskCheckList)
+- [TaskRelationships](https://github.com/lpg2709/clickup_api/tree/master/exemples/TaskRelationships)
 - [Tasks](https://github.com/lpg2709/clickup_api/tree/master/exemples/Tasks)
 - [TaskTemplates](https://github.com/lpg2709/clickup_api/tree/master/exemples/TaskTemplates)
 - [Teams](https://github.com/lpg2709/clickup_api/tree/master/exemples/Teams)
