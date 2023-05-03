@@ -6,7 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
-## [1.2.0] - XXXX-XX-XX - xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+## [1.2.0] - 2023-05-06 - xxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 ### Added
 
@@ -16,11 +16,31 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Teams.update_team
 - Teams.delete_team
 - Teams.get_workspace_seats
+- TimeTracking.get_time_entry_history
+- Lists.remove_task_from_list
+- Comments.create_chat_view_comments
+- Comments.get_chat_view_comments
+- TaskRelationships.add_dependency
+- TaskRelationships.add_task_link
+- TaskRelationships.delete_dependency
+- TaskRelationships.delete_task_link
+- TaskCheckList.create_checklist
+- TaskCheckList.create_checklist_item
+- TaskCheckList.delete_checklist
+- TaskCheckList.delete_checklist_item
+- TaskCheckList.edit_checklist
+- TaskCheckList.edit_checklist_item
+- Alias create_team_view to create_workspace_view
+- Alias get_team_view to get_workspace_view
 
 ### Changed
 
+- Rename exemple folder
+
 ### Fixed
 
+- On get_time_entries_within_date_range params length is undefined, not an array:
+Pull request [#6](https://github.com/lpg2709/clickup_api/pull/6) from [mordygparency](https://github.com/mordygparency)
 
 ## [1.1.4] - 2022-11-12 - a560184edbcc7a0a267165f93139e0e6f1c25b41
 
