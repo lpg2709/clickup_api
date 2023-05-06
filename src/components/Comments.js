@@ -1,4 +1,5 @@
 const Requests = require("../utils/requests");
+const genParams = require("../utils/params");
 
 var Comments = function (token) {
 	this.token = token;
@@ -121,6 +122,39 @@ Comments.prototype.get_list_comment = function (list_id) {
 	return new Promise(async function (resolve, reject) {
 		try {
 			var res = await Requests.https_clickupapi_get(`/api/v2/list/${list_id}/comment`, token);
+			resolve(res);
+		} catch (err) {
+			reject(err);
+		}
+	});
+}
+/**
+ * View comments from a Chat view.
+ * @param {String} view_id View ID of chat
+ * @param {JSON} params Object with query parameters
+ */
+Comments.prototype.get_chat_view_comments = function (view_id, params) {
+	var token = this.token;
+	return new Promise(async function (resolve, reject) {
+		try {
+			let param = genParams(params, []);
+			var res = await Requests.https_clickupapi_get(`/api/v2/view/${view_id}/comment?${Object.keys(params).length > 1 ? param : ""}`, token);
+			resolve(res);
+		} catch (err) {
+			reject(err);
+		}
+	});
+}
+/**
+ * Add a new comment to a Chat view.
+ * @param {String} view_id View ID where new commend gona be created
+ * @param {JSON} data Body request for the comment
+ */
+Comments.prototype.create_chat_view_comment = function (view_id, data) {
+	var token = this.token;
+	return new Promise(async function (resolve, reject) {
+		try {
+			var res = await Requests.https_clickupapi_post(`/api/v2/task/${view_id}/comment`, data, token);
 			resolve(res);
 		} catch (err) {
 			reject(err);

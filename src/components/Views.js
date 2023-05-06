@@ -20,6 +20,14 @@ Views.prototype.create_team_view = function (team_id, data) {
 	});
 }
 /**
+ * Create a view for team
+ * Alias from new version(create_team_view) to older(get_team_view)
+ * @param {String} team_id Team ID where the view be created
+ * @param {JSON} data Body request for create a view
+ */
+Views.prototype.create_workspace_view = Views.prototype.create_team_view;
+
+/**
  * Create a view for space
  * @param {String} space_id Space ID where the view be created
  * @param {JSON} data Body request for create a view
@@ -113,6 +121,13 @@ Views.prototype.get_team_view = function (team_id) {
 		}
 	});
 }
+/**
+ * Get view from team
+ * Alias from new version (get_workspace_view) to older (get_team_view)
+ * @param {String} team_id Team ID
+ */
+Views.prototype.get_workspace_view = Views.prototype.get_team_view;
+
 /**
  * Get view from space
  * @param {String} space_id Space ID

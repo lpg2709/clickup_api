@@ -1,18 +1,17 @@
 const clickup_api = require("../../src/index");
 
-
 (async function main() {
 	const Clickup = new clickup_api("access_token");
-
-	var params = {
-		team_id: "team_id",
-		// start_date: "1000",
-		// end_date: "1000",
-		// assignee: "",
-	}
+	var data = {
+		"name": "New team name",
+		"members": [
+			123456,
+			987654
+		]
+	};
 
 	try {
-		var info = await Clickup.TimeTracking.get_time_entries_within_date_range(params);
+		var info = await Clickup.Teams.create_team("team_id", data);
 		console.log(info);
 	} catch (err) {
 		console.log(err)
