@@ -138,13 +138,21 @@ module.exports = {
 				if (res.statusCode != 204) {
 					reject(res.statusCode);
 				}
-
+				// 204 should not return any data, but if it does, we'll parse it
 				res.on('data', function (chunk) {
 					str += chunk;
 				});
 
 				res.on('end', function () {
-					resolve(JSON.parse(str));
+					let parsedJSON = null;
+					try {
+						parsedJSON = JSON.parse(str);
+					}
+					catch (e) {
+						// ignore the error for now
+					}
+
+					resolve(parsedJSON);
 				});
 
 				res.on('error', function (err) {
