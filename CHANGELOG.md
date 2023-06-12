@@ -13,7 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- The 204 JSON parsing issue: Pull request [#8]([https://github.com/lpg2709/clickup_api/pull/6](https://github.com/lpg2709/clickup_api/pull/8)) from [@aduyng]([https://github.com/mordygparency](https://github.com/aduyng))
+- The 204 JSON parsing issue: Pull request [#8](https://github.com/lpg2709/clickup_api/pull/8) from [@aduyng](https://github.com/aduyng)
 
 ## [1.2.0] - 2023-05-06 - fdf5262bb0cadf69376d07b03e56b18a6822bfb0
 
