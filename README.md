@@ -79,30 +79,30 @@ The module use all specification of the ```ClickUp API```, pleas visit [ClickUp 
 
 ## Examples
 
-To view the examples, you can access the [github](https://github.com/lpg2709/clickup_api) page, in folder ```exemples``` you will find exemples for all member.
+To view the examples, you can access the [github](https://github.com/lpg2709/clickup_api) page, in folder ```examples``` you will find examples for all member.
 
-- [Attachments](https://github.com/lpg2709/clickup_api/tree/master/exemples/Attachments)
-- [Checklists](https://github.com/lpg2709/clickup_api/tree/master/exemples/Checklists)
-- [Comments](https://github.com/lpg2709/clickup_api/tree/master/exemples/Comments)
-- [CustomFields](https://github.com/lpg2709/clickup_api/tree/master/exemples/CustomFields)
-- [Dependencies](https://github.com/lpg2709/clickup_api/tree/master/exemples/Dependencies)
-- [Folders](https://github.com/lpg2709/clickup_api/tree/master/exemples/Folders)
-- [Goals](https://github.com/lpg2709/clickup_api/tree/master/exemples/Goals)
-- [Lists](https://github.com/lpg2709/clickup_api/tree/master/exemples/Lists)
-- [Members](https://github.com/lpg2709/clickup_api/tree/master/exemples/Members)
-- [Roles](https://github.com/lpg2709/clickup_api/tree/master/exemples/Roles)
-- [SharedHierarchy](https://github.com/lpg2709/clickup_api/tree/master/exemples/SharedHierarchy)
-- [Spaces](https://github.com/lpg2709/clickup_api/tree/master/exemples/Spaces)
-- [Tags](https://github.com/lpg2709/clickup_api/tree/master/exemples/Tags)
-- [TaskCheckList](https://github.com/lpg2709/clickup_api/tree/master/exemples/TaskCheckList)
-- [TaskRelationships](https://github.com/lpg2709/clickup_api/tree/master/exemples/TaskRelationships)
-- [Tasks](https://github.com/lpg2709/clickup_api/tree/master/exemples/Tasks)
-- [TaskTemplates](https://github.com/lpg2709/clickup_api/tree/master/exemples/TaskTemplates)
-- [Teams](https://github.com/lpg2709/clickup_api/tree/master/exemples/Teams)
-- [TimeTracking](https://github.com/lpg2709/clickup_api/tree/master/exemples/TimeTracking)
-- [Users](https://github.com/lpg2709/clickup_api/tree/master/exemples/Users)
-- [Views](https://github.com/lpg2709/clickup_api/tree/master/exemples/Views)
-- [Webhooks](https://github.com/lpg2709/clickup_api/tree/master/exemples/Webhooks)
+- [Attachments](https://github.com/lpg2709/clickup_api/tree/master/examples/Attachments)
+- [Checklists](https://github.com/lpg2709/clickup_api/tree/master/examples/Checklists)
+- [Comments](https://github.com/lpg2709/clickup_api/tree/master/examples/Comments)
+- [CustomFields](https://github.com/lpg2709/clickup_api/tree/master/examples/CustomFields)
+- [Dependencies](https://github.com/lpg2709/clickup_api/tree/master/examples/Dependencies)
+- [Folders](https://github.com/lpg2709/clickup_api/tree/master/examples/Folders)
+- [Goals](https://github.com/lpg2709/clickup_api/tree/master/examples/Goals)
+- [Lists](https://github.com/lpg2709/clickup_api/tree/master/examples/Lists)
+- [Members](https://github.com/lpg2709/clickup_api/tree/master/examples/Members)
+- [Roles](https://github.com/lpg2709/clickup_api/tree/master/examples/Roles)
+- [SharedHierarchy](https://github.com/lpg2709/clickup_api/tree/master/examples/SharedHierarchy)
+- [Spaces](https://github.com/lpg2709/clickup_api/tree/master/examples/Spaces)
+- [Tags](https://github.com/lpg2709/clickup_api/tree/master/examples/Tags)
+- [TaskCheckList](https://github.com/lpg2709/clickup_api/tree/master/examples/TaskCheckList)
+- [TaskRelationships](https://github.com/lpg2709/clickup_api/tree/master/examples/TaskRelationships)
+- [Tasks](https://github.com/lpg2709/clickup_api/tree/master/examples/Tasks)
+- [TaskTemplates](https://github.com/lpg2709/clickup_api/tree/master/examples/TaskTemplates)
+- [Teams](https://github.com/lpg2709/clickup_api/tree/master/examples/Teams)
+- [TimeTracking](https://github.com/lpg2709/clickup_api/tree/master/examples/TimeTracking)
+- [Users](https://github.com/lpg2709/clickup_api/tree/master/examples/Users)
+- [Views](https://github.com/lpg2709/clickup_api/tree/master/examples/Views)
+- [Webhooks](https://github.com/lpg2709/clickup_api/tree/master/examples/Webhooks)
 
 ## Changes log
 
