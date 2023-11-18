@@ -122,14 +122,19 @@ Tasks.prototype.get_tasks_time_in_status = function (params) {
  * Get Bulk Task's Time in Status
  * @param {JSON} params Request parameters in JSON format
  */
-// TODO: Correção aki
-// task_ids podem ter varios arruar isso
 Tasks.prototype.get_bulk_tasks_time_in_status = function (params) {
+	// If thers some bug, is because i can't test in my plan :(
 	token = this.token;
 	return new Promise(async function (resolve, reject) {
 		try {
-			let param = genParams(params, ["task_ids"], []);
-			var res = await Requests.https_clickupapi_get(`/api/v2/task/bulk_time_in_status/task_ids${param}`, token);
+			let param = genParams(params, ["task_ids"], ["task_ids"]);
+			let tasks_ids = "?";
+			params["task_ids"].forEach((e) => {
+				tasks_ids += `task_ids=${e}&`;
+			})
+			tasks_ids = tasks_ids.slice(0, -1);
+			param = param.replace("?", "");
+			var res = await Requests.https_clickupapi_get(`/api/v2/task/bulk_time_in_status/task_ids${tasks_ids}${param}`, token);
 			resolve(res);
 		} catch (err) {
 			reject(err);

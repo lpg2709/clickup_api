@@ -5,7 +5,7 @@ async function main(){
 	const clickup = new clickup_api("access_token");
 
 	var param = {
-		"task_ids": "123",
+		"task_ids": ["123", "321"],
 //      "custom_task_ids": "0",
 // 		"team_id": "123",
 	}
