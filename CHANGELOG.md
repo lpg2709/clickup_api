@@ -5,15 +5,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.2.1] - 2023-xx-xx - 
+## [1.2.1] - 2023-11-18 -
 
 ### Added
 
 ### Changed
 
+- Better parameters evaluation
+
 ### Fixed
 
 - The 204 JSON parsing issue: Pull request [#8](https://github.com/lpg2709/clickup_api/pull/8) from [@aduyng](https://github.com/aduyng)
+- Typo in the example directory name - Pull request [#9](https://github.com/lpg2709/clickup_api/pull/9) by [@alexander-mart](https://github.com/mordygparency)
+- Parameters empty on url
+- `view_id` is required on `get_chat_view_comments`
+- `team_id` is required on `get_custom_roles`
+- `task_id`is required on `create_checklist`
 
 ## [1.2.0] - 2023-05-06 - fdf5262bb0cadf69376d07b03e56b18a6822bfb0
 

@@ -12,8 +12,8 @@ TimeTracking.prototype.get_time_entries_within_date_range = function (params) {
 	token = this.token;
 	return new Promise(async function (resolve, reject) {
 		try {
-			let param = genParams(params, ["team_id"]);
-			var res = await Requests.https_clickupapi_get(`/api/v2/team/${params.team_id}/time_entries?${Object.keys(params).length > 1 ? param : ""}`, token);
+			let param = genParams(params, ["team_id"], ["team_id"]);
+			var res = await Requests.https_clickupapi_get(`/api/v2/team/${params.team_id}/time_entries${param}`, token);
 			resolve(res);
 		} catch (err) {
 			reject(err);

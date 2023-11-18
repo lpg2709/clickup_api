@@ -1,5 +1,4 @@
 const Requests = require("../utils/requests");
-const genParams = require("../utils/params");
 
 var Users = function (token) {
 	this.token = token;

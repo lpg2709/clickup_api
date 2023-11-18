@@ -14,8 +14,8 @@ TaskCheckList.prototype.create_checklist = function (task_id, params, data) {
 	token = this.token;
 	return new Promise(async function (resolve, reject) {
 		try {
-			let param = genParams(params, []);
-			var res = await Requests.https_clickupapi_post(`/api/v2/task/${task_id}/checklist?${Object.keys(params).length > 1 ? param : ""}`, data, token);
+			let param = genParams(params, ["task_id"], ["task_id"]);
+			var res = await Requests.https_clickupapi_post(`/api/v2/task/${task_id}/checklist${param}`, data, token);
 			resolve(res);
 		} catch (err) {
 			reject(err);
