@@ -21,6 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `view_id` is required on `get_chat_view_comments`
 - `team_id` is required on `get_custom_roles`
 - `task_id`is required on `create_checklist`
+- Better handle of `task_ids` on `get_tasks_time_in_status`
 
 ## [1.2.0] - 2023-05-06 - fdf5262bb0cadf69376d07b03e56b18a6822bfb0
 
