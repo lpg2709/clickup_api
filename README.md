@@ -106,7 +106,7 @@ To view the examples, you can access the [github](https://github.com/lpg2709/cli
 
 ## Changes log
 
-All changes by version can be see on [CHANGELOG.md](https://github.com/lpg2709/clickup_api/blob/master/CHANGELOG) on [github](https://github.com/lpg2709/clickup_api)
+All changes by version can be see on [CHANGELOG.md](https://raw.githubusercontent.com/lpg2709/clickup_api/master/CHANGELOG.md) on [github](https://github.com/lpg2709/clickup_api)
 
 ## Contributing
 
