@@ -14,8 +14,8 @@ TaskRelationships.prototype.add_dependency = function (task_id, params, data) {
 	token = this.token;
 	return new Promise(async function (resolve, reject) {
 		try {
-			let param = genParams(params, []);
-			var res = await Requests.https_clickupapi_post(`/api/v2/task/${task_id}/dependency?${Object.keys(params).length > 1 ? param : ""}`, data, token);
+			let param = genParams(params, ["task_id"], ["task_id"]);
+			var res = await Requests.https_clickupapi_post(`/api/v2/task/${task_id}/dependency${param}`, data, token);
 			resolve(res);
 		} catch (err) {
 			reject(err);
@@ -31,8 +31,8 @@ TaskRelationships.prototype.delete_dependency = function (task_id, params) {
 	token = this.token;
 	return new Promise(async function (resolve, reject) {
 		try {
-			let param = genParams(params, ["depends_on", "dependency_of"]);
-			var res = await Requests.https_clickupapi_delete(`/api/v2/task/${task_id}/dependency?${Object.keys(params).length > 1 ? param : ""}`, token);
+			let param = genParams(params, ["task_id","depends_on", "dependency_of"], ["task_id"]);
+			var res = await Requests.https_clickupapi_delete(`/api/v2/task/${task_id}/dependency${param}`, token);
 			resolve(res);
 		} catch (err) {
 			reject(err);
@@ -49,8 +49,8 @@ TaskRelationships.prototype.add_task_link = function (task_id, links_to, params)
 	token = this.token;
 	return new Promise(async function (resolve, reject) {
 		try {
-			let param = genParams(params, []);
-			var res = await Requests.https_clickupapi_post(`/api/v2/task/${task_id}/link/${links_to}?${Object.keys(params).length > 1 ? param : ""}`, token);
+			let param = genParams(params, ["task_id", "links_to"], ["task_id", "links_to"]);
+			var res = await Requests.https_clickupapi_post(`/api/v2/task/${task_id}/link/${links_to}${param}`, token);
 			resolve(res);
 		} catch (err) {
 			reject(err);
@@ -67,8 +67,8 @@ TaskRelationships.prototype.delete_task_link = function (task_id, links_to, para
 	token = this.token;
 	return new Promise(async function (resolve, reject) {
 		try {
-			let param = genParams(params, []);
-			var res = await Requests.https_clickupapi_delete(`/api/v2/task/${task_id}/link/${links_to}?${Object.keys(params).length > 1 ? param : ""}`, token);
+			let param = genParams(params, ["task_id", "links_to"], ["task_id", "links_to"]);
+			var res = await Requests.https_clickupapi_delete(`/api/v2/task/${task_id}/link/${links_to}${param}`, token);
 			resolve(res);
 		} catch (err) {
 			reject(err);

@@ -137,8 +137,8 @@ Comments.prototype.get_chat_view_comments = function (view_id, params) {
 	var token = this.token;
 	return new Promise(async function (resolve, reject) {
 		try {
-			let param = genParams(params, []);
-			var res = await Requests.https_clickupapi_get(`/api/v2/view/${view_id}/comment?${Object.keys(params).length > 1 ? param : ""}`, token);
+			let param = genParams(params, ["view_id"], ["view_id"]);
+			var res = await Requests.https_clickupapi_get(`/api/v2/view/${view_id}/comment${param}`, token);
 			resolve(res);
 		} catch (err) {
 			reject(err);

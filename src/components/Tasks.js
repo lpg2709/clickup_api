@@ -59,8 +59,8 @@ Tasks.prototype.get_task = function (params) {
 	token = this.token;
 	return new Promise(async function (resolve, reject) {
 		try {
-			let param = genParams(params, ["task_id"]);
-			var res = await Requests.https_clickupapi_get(`/api/v2/task/${params.task_id}/?${params.length > 1 ? param : ""}`, token);
+			let param = genParams(params, ["task_id"], ["task_id"]);
+			var res = await Requests.https_clickupapi_get(`/api/v2/task/${params.task_id}${param}`, token);
 			resolve(res);
 		} catch (err) {
 			reject(err);
@@ -75,8 +75,8 @@ Tasks.prototype.get_tasks = function (params) {
 	token = this.token;
 	return new Promise(async function (resolve, reject) {
 		try {
-			let param = genParams(params, ["list_id", "archived"]);
-			var res = await Requests.https_clickupapi_get(`/api/v2/list/${params.list_id}/task?${params.length > 1 ? param : ""}`, token);
+			let param = genParams(params, ["list_id"], ["list_id"]);
+			var res = await Requests.https_clickupapi_get(`/api/v2/list/${params.list_id}/task${param}`, token);
 			resolve(res);
 		} catch (err) {
 			reject(err);
@@ -92,8 +92,8 @@ Tasks.prototype.get_filtered_team_tasks  = function (params) {
 	token = this.token;
 	return new Promise(async function (resolve, reject) {
 		try {
-			let param = genParams(params, ["team_Id", "page"]);
-			var res = await Requests.https_clickupapi_get(`/api/v2/team/${params.team_id}/task?${params.length > 1 ? param : ""}`, token);
+			let param = genParams(params, ["team_Id"], ["team_Id"]);
+			var res = await Requests.https_clickupapi_get(`/api/v2/team/${params.team_id}/task${param}`, token);
 			resolve(res);
 		} catch (err) {
 			reject(err);
@@ -109,8 +109,8 @@ Tasks.prototype.get_tasks_time_in_status = function (params) {
 	token = this.token;
 	return new Promise(async function (resolve, reject) {
 		try {
-			let param = genParams(params, ["task_id"]);
-			var res = await Requests.https_clickupapi_get(`/api/v2/task/${params.task_id}/time_in_status?${params.length > 1 ? param : ""}`, token);
+			let param = genParams(params, ["task_id"], ["task_id"]);
+			var res = await Requests.https_clickupapi_get(`/api/v2/task/${params.task_id}/time_in_status${param}`, token);
 			resolve(res);
 		} catch (err) {
 			reject(err);
@@ -123,11 +123,18 @@ Tasks.prototype.get_tasks_time_in_status = function (params) {
  * @param {JSON} params Request parameters in JSON format
  */
 Tasks.prototype.get_bulk_tasks_time_in_status = function (params) {
+	// If thers some bug, is because i can't test in my plan :(
 	token = this.token;
 	return new Promise(async function (resolve, reject) {
 		try {
-			let param = genParams(params, ["task_ids"]);
-			var res = await Requests.https_clickupapi_get(`/api/v2/task/bulk_time_in_status/task_ids?${params.task_ids}&${params.length > 1 ? param : ""}`, token);
+			let param = genParams(params, ["task_ids"], ["task_ids"]);
+			let tasks_ids = "?";
+			params["task_ids"].forEach((e) => {
+				tasks_ids += `task_ids=${e}&`;
+			})
+			tasks_ids = tasks_ids.slice(0, -1);
+			param = param.replace("?", "");
+			var res = await Requests.https_clickupapi_get(`/api/v2/task/bulk_time_in_status/task_ids${tasks_ids}${param}`, token);
 			resolve(res);
 		} catch (err) {
 			reject(err);
