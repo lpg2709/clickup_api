@@ -9,13 +9,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Some test cases
+- Test cases for param.js
 
 ### Changed
 
 ### Fixed
 
-- Suport for array parameters on query string
+- Suport for array parameters on query string. (FIX [issue/14](https://github.com/lpg2709/clickup_api/issues/14))
 - Removing file from npm post
 
 ## [1.2.2] - 2023-11-18 - 2d57080eda561eef88fabdba2e379728bc276956
