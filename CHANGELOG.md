@@ -5,14 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.2.4] - 2023-xx-xx -
+## [1.3.0] - 2023-xx-xx -
 
 ### Added
+
+- Some test cases
 
 ### Changed
 
 ### Fixed
 
+- Suport for array parameters on query string
 - Removing file from npm post
 
 ## [1.2.2] - 2023-11-18 - 2d57080eda561eef88fabdba2e379728bc276956
