@@ -1,6 +1,6 @@
 /**
  * Gennerate the query string parameters
- * @param {Object | String} params - A JSON with all the parameters for the request. (path and query)
+ * @param {(JSON | String)} params - A JSON with all the parameters for the request. (path and query)
  * @param {String[]} required - List of required elements to be present on 'params'
  * @param {String[]} path_params - Parameters to be placed on path, removed from query string.
  * @returns {String} The encoded query string
