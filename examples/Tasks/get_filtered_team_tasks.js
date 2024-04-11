@@ -5,7 +5,7 @@ async function main(){
 	const clickup = new clickup_api("access_token");
 
 	var param = {
-		"team_Id": "123",
+		"team_Id": "123", // Yes de 'i' leter is uppercase on this, following the API doc (why?)
 		"page": "0",
 // 		"order_by": "",
 // 		"reverse": "",
@@ -25,7 +25,6 @@ async function main(){
 // 		"date_updated_lt": "",
 // 		"custom_fields[]": "",
 // 		"custom_task_ids": "",
-// 		"team_id": "",
 	}
 
 	try{
