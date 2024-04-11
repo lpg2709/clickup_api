@@ -93,7 +93,7 @@ Tasks.prototype.get_filtered_team_tasks  = function (params) {
 	return new Promise(async function (resolve, reject) {
 		try {
 			let param = genParams(params, ["team_Id"], ["team_Id"]);
-			var res = await Requests.https_clickupapi_get(`/api/v2/team/${params.team_id}/task${param}`, token);
+			var res = await Requests.https_clickupapi_get(`/api/v2/team/${params.team_Id}/task${param}`, token);
 			resolve(res);
 		} catch (err) {
 			reject(err);
