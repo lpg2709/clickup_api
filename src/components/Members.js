@@ -10,6 +10,7 @@ var Members = function (token, request) {
  */
 Members.prototype.get_task_members = function (task_id) {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
 			var res = await request.https_clickupapi_get(
@@ -28,6 +29,7 @@ Members.prototype.get_task_members = function (task_id) {
  */
 Members.prototype.get_list_members = function (list_id) {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
 			var res = await request.https_clickupapi_get(

@@ -11,6 +11,7 @@ var TaskTemplates = function (token, request) {
  */
 TaskTemplates.prototype.get_task_templates = function (team_id, page) {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
 			var res = await request.https_clickupapi_get(
@@ -35,6 +36,7 @@ TaskTemplates.prototype.create_task_from_template = function (
 	data
 ) {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
 			var res = await request.https_clickupapi_post(

@@ -1,7 +1,8 @@
 const Request = require("../utils/requests");
 
 var Authorization = function (token, request) {
-	this.token.token;
+	this.token = token;
+	this.request = request;
 };
 
 Authorization.prototype.get_access_token = function (
@@ -10,9 +11,10 @@ Authorization.prototype.get_access_token = function (
 	code
 ) {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
-			var res = await Request.https_clickupapi_post(`/api/v2/user`);
+			var res = await request.https_clickupapi_post(`/api/v2/user`);
 			resolve(res);
 		} catch (err) {
 			reject(err);
@@ -25,9 +27,10 @@ Authorization.prototype.get_access_token = function (
  */
 Authorization.prototype.get_authorized_user = function () {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
-			var res = await Request.https_clickupapi_get(`/api/v2/user`, token);
+			var res = await request.https_clickupapi_get(`/api/v2/user`, token);
 			resolve(res);
 		} catch (err) {
 			reject(err);
@@ -40,9 +43,10 @@ Authorization.prototype.get_authorized_user = function () {
  */
 Authorization.prototype.get_authorized_teams = function () {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
-			var res = await Request.https_clickupapi_get(`/api/v2/team`, token);
+			var res = await request.https_clickupapi_get(`/api/v2/team`, token);
 			resolve(res);
 		} catch (err) {
 			reject(err);

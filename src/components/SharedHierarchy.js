@@ -10,6 +10,7 @@ var SharedHierarchy = function (token, request) {
  */
 SharedHierarchy.prototype.get_shared_hierarchy = function (team_id) {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
 			var res = await request.https_clickupapi_get(

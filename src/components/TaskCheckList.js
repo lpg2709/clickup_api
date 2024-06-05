@@ -13,6 +13,7 @@ var TaskCheckList = function (token, request) {
  */
 TaskCheckList.prototype.create_checklist = function (task_id, params, data) {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
 			let param = genParams(params, ["task_id"], ["task_id"]);
@@ -34,6 +35,7 @@ TaskCheckList.prototype.create_checklist = function (task_id, params, data) {
  */
 TaskCheckList.prototype.edit_checklist = function (checklist_id, data) {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
 			var res = await request.https_clickupapi_put(
@@ -53,6 +55,7 @@ TaskCheckList.prototype.edit_checklist = function (checklist_id, data) {
  */
 TaskCheckList.prototype.delete_checklist = function (checklist_id) {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
 			var res = await request.https_clickupapi_delete(
@@ -72,6 +75,7 @@ TaskCheckList.prototype.delete_checklist = function (checklist_id) {
  */
 TaskCheckList.prototype.create_checklist_item = function (checklist_id, data) {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
 			var res = await request.https_clickupapi_post(
@@ -96,6 +100,7 @@ TaskCheckList.prototype.edit_checklist_item = function (
 	data
 ) {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
 			var res = await request.https_clickupapi_put(
@@ -119,6 +124,7 @@ TaskCheckList.prototype.delete_checklist_item = function (
 	checklist_item_id
 ) {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
 			var res = await request.https_clickupapi_delete(

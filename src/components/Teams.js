@@ -12,6 +12,7 @@ var Teams = function (token, request) {
  */
 Teams.prototype.create_team = function (team_id, data) {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
 			var res = await request.https_clickupapi_post(
@@ -33,6 +34,7 @@ Teams.prototype.create_team = function (team_id, data) {
  */
 Teams.prototype.update_team = function (group_id, data) {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
 			var res = await request.https_clickupapi_put(
@@ -53,6 +55,7 @@ Teams.prototype.update_team = function (group_id, data) {
  */
 Teams.prototype.delete_team = function (group_id) {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
 			var res = await request.https_clickupapi_delete(
@@ -71,6 +74,7 @@ Teams.prototype.delete_team = function (group_id) {
  */
 Teams.prototype.get_teams = function () {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
 			var res = await request.https_clickupapi_get(`/api/v2/team`, token);
@@ -87,6 +91,7 @@ Teams.prototype.get_teams = function () {
  */
 Teams.prototype.get_workspace_seats = function (team_id) {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
 			var res = await request.https_clickupapi_get(

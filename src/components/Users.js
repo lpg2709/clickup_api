@@ -12,6 +12,7 @@ var Users = function (token, request) {
  */
 Users.prototype.invite_user_to_workspace = function (team_id, data) {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
 			var res = await request.https_clickupapi_post(
@@ -34,6 +35,7 @@ Users.prototype.invite_user_to_workspace = function (team_id, data) {
  */
 Users.prototype.edit_user_on_workspace = function (team_id, user_id, data) {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
 			var res = await request.https_clickupapi_put(
@@ -55,6 +57,7 @@ Users.prototype.edit_user_on_workspace = function (team_id, user_id, data) {
  */
 Users.prototype.remove_user_from_workspace = function (team_id, user_id) {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
 			var res = await request.https_clickupapi_delete(
@@ -76,6 +79,7 @@ Users.prototype.remove_user_from_workspace = function (team_id, user_id) {
  */
 Users.prototype.get_user = function (team_id, user_id) {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
 			var res = await request.https_clickupapi_get(

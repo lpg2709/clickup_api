@@ -11,6 +11,7 @@ var TimeTracking = function (token, request) {
  */
 TimeTracking.prototype.get_time_entries_within_date_range = function (params) {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
 			let param = genParams(params, ["team_id"], ["team_id"]);
@@ -31,6 +32,7 @@ TimeTracking.prototype.get_time_entries_within_date_range = function (params) {
  */
 TimeTracking.prototype.get_singular_time_entry = function (team_id, timer_id) {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
 			var res = await request.https_clickupapi_get(
@@ -49,6 +51,7 @@ TimeTracking.prototype.get_singular_time_entry = function (team_id, timer_id) {
  */
 TimeTracking.prototype.get_running_time_entry = function (team_id) {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
 			var res = await request.https_clickupapi_get(
@@ -68,6 +71,7 @@ TimeTracking.prototype.get_running_time_entry = function (team_id) {
  */
 TimeTracking.prototype.create_time_entry = function (team_id, data) {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
 			var res = await request.https_clickupapi_post(
@@ -87,6 +91,7 @@ TimeTracking.prototype.create_time_entry = function (team_id, data) {
  */
 TimeTracking.prototype.remove_tags_from_time_entries = function (team_id) {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
 			var res = await request.https_clickupapi_delete(
@@ -105,6 +110,7 @@ TimeTracking.prototype.remove_tags_from_time_entries = function (team_id) {
  */
 TimeTracking.prototype.get_all_tags_from_time_entries = function (team_id) {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
 			var res = await request.https_clickupapi_get(
@@ -124,6 +130,7 @@ TimeTracking.prototype.get_all_tags_from_time_entries = function (team_id) {
  */
 TimeTracking.prototype.add_tags_from_time_entries = function (team_id, data) {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
 			var res = await request.https_clickupapi_post(
@@ -147,6 +154,7 @@ TimeTracking.prototype.change_tag_names_from_time_entries = function (
 	data
 ) {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
 			var res = await request.https_clickupapi_put(
@@ -168,6 +176,7 @@ TimeTracking.prototype.change_tag_names_from_time_entries = function (
  */
 TimeTracking.prototype.start_time_entry = function (team_id, timer_id, data) {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
 			var res = await request.https_clickupapi_put(
@@ -187,6 +196,7 @@ TimeTracking.prototype.start_time_entry = function (team_id, timer_id, data) {
  */
 TimeTracking.prototype.stop_time_entry = function (team_id) {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
 			var res = await request.https_clickupapi_put(
@@ -207,6 +217,7 @@ TimeTracking.prototype.stop_time_entry = function (team_id) {
  */
 TimeTracking.prototype.delete_time_entry = function (team_id, timer_id) {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
 			var res = await request.https_clickupapi_delete(
@@ -227,6 +238,7 @@ TimeTracking.prototype.delete_time_entry = function (team_id, timer_id) {
  */
 TimeTracking.prototype.update_time_entry = function (team_id, timer_id, data) {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
 			var res = await request.https_clickupapi_put(
@@ -247,6 +259,7 @@ TimeTracking.prototype.update_time_entry = function (team_id, timer_id, data) {
  */
 TimeTracking.prototype.get_time_entry_history = function (team_id, timer_id) {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
 			var res = await request.https_clickupapi_get(

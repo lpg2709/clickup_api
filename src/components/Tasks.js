@@ -12,6 +12,7 @@ var Tasks = function (token, request) {
  */
 Tasks.prototype.create_task = function (list_id, data) {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
 			var res = await request.https_clickupapi_post(
@@ -32,6 +33,7 @@ Tasks.prototype.create_task = function (list_id, data) {
  */
 Tasks.prototype.update_task = function (task_id, data) {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
 			var res = await request.https_clickupapi_put(
@@ -51,6 +53,7 @@ Tasks.prototype.update_task = function (task_id, data) {
  */
 Tasks.prototype.delete_task = function (task_id) {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
 			var res = await request.https_clickupapi_delete(
@@ -69,6 +72,7 @@ Tasks.prototype.delete_task = function (task_id) {
  */
 Tasks.prototype.get_task = function (params) {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
 			let param = genParams(params, ["task_id"], ["task_id"]);
@@ -88,6 +92,7 @@ Tasks.prototype.get_task = function (params) {
  */
 Tasks.prototype.get_tasks = function (params) {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
 			let param = genParams(params, ["list_id"], ["list_id"]);
@@ -108,6 +113,7 @@ Tasks.prototype.get_tasks = function (params) {
  */
 Tasks.prototype.get_filtered_team_tasks = function (params) {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
 			let param = genParams(params, ["team_Id"], ["team_Id"]);
@@ -128,6 +134,7 @@ Tasks.prototype.get_filtered_team_tasks = function (params) {
  */
 Tasks.prototype.get_tasks_time_in_status = function (params) {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
 			let param = genParams(params, ["task_id"], ["task_id"]);
@@ -149,6 +156,7 @@ Tasks.prototype.get_tasks_time_in_status = function (params) {
 Tasks.prototype.get_bulk_tasks_time_in_status = function (params) {
 	// If thers some bug, is because i can't test in my plan :(
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
 			let param = genParams(params, ["task_ids"], ["task_ids"]);
@@ -176,6 +184,7 @@ Tasks.prototype.get_bulk_tasks_time_in_status = function (params) {
 
 Tasks.prototype.get_team_tasks = function (params) {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
 			let param = genParams(params, ["list_id", "archived"]);

@@ -13,6 +13,7 @@ var TaskRelationships = function (token, request) {
  */
 TaskRelationships.prototype.add_dependency = function (task_id, params, data) {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
 			let param = genParams(params, ["task_id"], ["task_id"]);
@@ -34,6 +35,7 @@ TaskRelationships.prototype.add_dependency = function (task_id, params, data) {
  */
 TaskRelationships.prototype.delete_dependency = function (task_id, params) {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
 			let param = genParams(
@@ -63,6 +65,7 @@ TaskRelationships.prototype.add_task_link = function (
 	params
 ) {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
 			let param = genParams(
@@ -92,6 +95,7 @@ TaskRelationships.prototype.delete_task_link = function (
 	params
 ) {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
 			let param = genParams(

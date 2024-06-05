@@ -11,6 +11,7 @@ var Views = function (token, request) {
  */
 Views.prototype.create_team_view = function (team_id, data) {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
 			var res = await request.https_clickupapi_post(
@@ -39,6 +40,7 @@ Views.prototype.create_workspace_view = Views.prototype.create_team_view;
  */
 Views.prototype.create_space_view = function (space_id, data) {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
 			var res = await request.https_clickupapi_post(
@@ -59,6 +61,7 @@ Views.prototype.create_space_view = function (space_id, data) {
  */
 Views.prototype.create_folder_view = function (folder_id, data) {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
 			var res = await request.https_clickupapi_post(
@@ -79,6 +82,7 @@ Views.prototype.create_folder_view = function (folder_id, data) {
  */
 Views.prototype.create_list_view = function (list_id, data) {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
 			var res = await request.https_clickupapi_post(
@@ -99,6 +103,7 @@ Views.prototype.create_list_view = function (list_id, data) {
  */
 Views.prototype.update_view = function (view_id, data) {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
 			var res = await request.https_clickupapi_put(
@@ -118,6 +123,7 @@ Views.prototype.update_view = function (view_id, data) {
  */
 Views.prototype.delete_view = function (view_id) {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
 			var res = await request.https_clickupapi_delete(
@@ -136,6 +142,7 @@ Views.prototype.delete_view = function (view_id) {
  */
 Views.prototype.get_team_view = function (team_id) {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
 			var res = await request.https_clickupapi_get(
@@ -161,6 +168,7 @@ Views.prototype.get_workspace_view = Views.prototype.get_team_view;
  */
 Views.prototype.get_space_view = function (space_id) {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
 			var res = await request.https_clickupapi_get(
@@ -179,6 +187,7 @@ Views.prototype.get_space_view = function (space_id) {
  */
 Views.prototype.get_folder_view = function (folder_id) {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
 			var res = await request.https_clickupapi_get(
@@ -197,6 +206,7 @@ Views.prototype.get_folder_view = function (folder_id) {
  */
 Views.prototype.get_list_view = function (list_id) {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
 			var res = await request.https_clickupapi_get(
@@ -215,6 +225,7 @@ Views.prototype.get_list_view = function (list_id) {
  */
 Views.prototype.get_view = function (view_id) {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
 			var res = await request.https_clickupapi_get(
@@ -234,6 +245,7 @@ Views.prototype.get_view = function (view_id) {
  */
 Views.prototype.get_view_tasks = function (view_id, page) {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
 			var res = await request.https_clickupapi_get(
