@@ -1,39 +1,49 @@
 const Requests = require("../utils/requests");
 
-var Tags = function(token){
+var Tags = function (token, request) {
 	this.token = token;
-}
+	this.request = request;
+};
 /**
  * Get all tags in space
  * @param {String} space_id Space ID
  */
-Tags.prototype.get_space_tag = function(space_id){
+Tags.prototype.get_space_tag = function (space_id) {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
-			var res = await Requests.https_clickupapi_get(`/api/v2/space/${space_id}/tag`, token);
+			var res = await request.https_clickupapi_get(
+				`/api/v2/space/${space_id}/tag`,
+				token
+			);
 			resolve(res);
 		} catch (err) {
 			reject(err);
 		}
 	});
-}
+};
 /**
  * Create a tag
  * @param {String} space_id Space ID where be created
  * @param {JSON} data Body request for tag
  */
-Tags.prototype.create_space_tag = function (space_id, data){
+Tags.prototype.create_space_tag = function (space_id, data) {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
-			var res = await Requests.https_clickupapi_post(`/api/v2/space/${space_id}/tag`, data, token);
+			var res = await request.https_clickupapi_post(
+				`/api/v2/space/${space_id}/tag`,
+				data,
+				token
+			);
 			resolve(res);
 		} catch (err) {
 			reject(err);
 		}
 	});
-}
+};
 /**
  * Edit a tag in space
  * @param {String} space_id Space ID where the tag is
@@ -42,15 +52,20 @@ Tags.prototype.create_space_tag = function (space_id, data){
  */
 Tags.prototype.edit_space_tag = function (space_id, tag_name, data) {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
-			var res = await Requests.https_clickupapi_put(`/api/v2/space/${space_id}/tag/${encodeURI(tag_name)}`, data, token);
+			var res = await request.https_clickupapi_put(
+				`/api/v2/space/${space_id}/tag/${encodeURI(tag_name)}`,
+				data,
+				token
+			);
 			resolve(res);
 		} catch (err) {
 			reject(err);
 		}
 	});
-}
+};
 /**
  * Delete a tag from space
  * @param {String} space_id Space ID where the tag is
@@ -58,15 +73,19 @@ Tags.prototype.edit_space_tag = function (space_id, tag_name, data) {
  */
 Tags.prototype.delete_space_tag = function (space_id, tag_name) {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
-			var res = await Requests.https_clickupapi_delete(`/api/v2/space/${space_id}/tag/${encodeURI(tag_name)}`, token);
+			var res = await request.https_clickupapi_delete(
+				`/api/v2/space/${space_id}/tag/${encodeURI(tag_name)}`,
+				token
+			);
 			resolve(res);
 		} catch (err) {
 			reject(err);
 		}
 	});
-}
+};
 /**
  * Add a tag into a task
  * @param {String} task_id Task ID where tag be created
@@ -74,15 +93,20 @@ Tags.prototype.delete_space_tag = function (space_id, tag_name) {
  */
 Tags.prototype.add_tag_to_task = function (task_id, tag_name) {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
-			var res = await Requests.https_clickupapi_post(`/api/v2/task/${task_id}/tag/${encodeURI(tag_name)}`, {}, token);
+			var res = await request.https_clickupapi_post(
+				`/api/v2/task/${task_id}/tag/${encodeURI(tag_name)}`,
+				{},
+				token
+			);
 			resolve(res);
 		} catch (err) {
 			reject(err);
 		}
 	});
-}
+};
 /**
  * Remove a tag from task
  * @param {String} task_id Task where the tag is
@@ -90,14 +114,18 @@ Tags.prototype.add_tag_to_task = function (task_id, tag_name) {
  */
 Tags.prototype.remove_tag_from_task = function (task_id, tag_name) {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
-			var res = await Requests.https_clickupapi_delete(`/api/v2/task/${task_id}/tag/${encodeURI(tag_name)}`, token);
+			var res = await request.https_clickupapi_delete(
+				`/api/v2/task/${task_id}/tag/${encodeURI(tag_name)}`,
+				token
+			);
 			resolve(res);
 		} catch (err) {
 			reject(err);
 		}
 	});
-}
+};
 
 module.exports = Tags;

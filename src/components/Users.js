@@ -1,8 +1,9 @@
 const Requests = require("../utils/requests");
 
-var Users = function (token) {
+var Users = function (token, request) {
 	this.token = token;
-}
+	this.request = request;
+};
 
 /**
  * Invite User To Workspace
@@ -10,16 +11,20 @@ var Users = function (token) {
  * @param {JSON} data Body request for User
  */
 Users.prototype.invite_user_to_workspace = function (team_id, data) {
-	token = this.token;
+	var token = this.token;
 	return new Promise(async function (resolve, reject) {
 		try {
-			var res = await Requests.https_clickupapi_post(`/api/v2/team/${team_id}/user`, data, token);
+			var res = await request.https_clickupapi_post(
+				`/api/v2/team/${team_id}/user`,
+				data,
+				token
+			);
 			resolve(res);
 		} catch (err) {
 			reject(err);
 		}
 	});
-}
+};
 
 /**
  * Edit User On Workspace
@@ -28,16 +33,20 @@ Users.prototype.invite_user_to_workspace = function (team_id, data) {
  * @param {JSON} data Body request for User
  */
 Users.prototype.edit_user_on_workspace = function (team_id, user_id, data) {
-	token = this.token;
+	var token = this.token;
 	return new Promise(async function (resolve, reject) {
 		try {
-			var res = await Requests.https_clickupapi_put(`/api/v2/team/${team_id}/user/${user_id}`, data, token);
+			var res = await request.https_clickupapi_put(
+				`/api/v2/team/${team_id}/user/${user_id}`,
+				data,
+				token
+			);
 			resolve(res);
 		} catch (err) {
 			reject(err);
 		}
 	});
-}
+};
 
 /**
  * Remove User From Workspace
@@ -45,16 +54,20 @@ Users.prototype.edit_user_on_workspace = function (team_id, user_id, data) {
  * @param {String} user_id User ID to be deleted
  */
 Users.prototype.remove_user_from_workspace = function (team_id, user_id) {
-	token = this.token;
+	var token = this.token;
 	return new Promise(async function (resolve, reject) {
 		try {
-			var res = await Requests.https_clickupapi_delete(`/api/v2/team/${team_id}/user/${user_id}`, data, token);
+			var res = await request.https_clickupapi_delete(
+				`/api/v2/team/${team_id}/user/${user_id}`,
+				data,
+				token
+			);
 			resolve(res);
 		} catch (err) {
 			reject(err);
 		}
 	});
-}
+};
 
 /**
  * Get User
@@ -62,15 +75,18 @@ Users.prototype.remove_user_from_workspace = function (team_id, user_id) {
  * @param {String} user_id User ID to be returned
  */
 Users.prototype.get_user = function (team_id, user_id) {
-	token = this.token;
+	var token = this.token;
 	return new Promise(async function (resolve, reject) {
 		try {
-			var res = await Requests.https_clickupapi_get(`/api/v2/team/${team_id}/user/${user_id}`, token);
+			var res = await request.https_clickupapi_get(
+				`/api/v2/team/${team_id}/user/${user_id}`,
+				token
+			);
 			resolve(res);
 		} catch (err) {
 			reject(err);
 		}
 	});
-}
+};
 
 module.exports = Users;

@@ -13,7 +13,7 @@ const Spaces = require("./components/Spaces");
 const Tags = require("./components/Tags");
 const TaskCheckList = require("./components/TaskCheckList");
 const TaskRelationships = require("./components/TaskRelationships");
-const Task = require('./components/Tasks');
+const Task = require("./components/Tasks");
 const TaskTemplates = require("./components/TaskTemplates");
 const Teams = require("./components/Teams");
 const TimeTracking = require("./components/TimeTracking");
@@ -21,33 +21,42 @@ const Users = require("./components/Users");
 const Roles = require("./components/Roles");
 const Views = require("./components/Views");
 const Webhooks = require("./components/Webhooks");
+const Requests = require("./utils/requests");
+const Attachment = require("./utils/Attachments");
 
-var Clickup = function (token) {
+var Clickup = function (token, requestParam) {
 	this.token = token;
+	const oRequestParam = requestParam || {
+		host: "api.clickup.com",
+		port: 443,
+		pathPrefix: "",
+	};
+	const oRequests = new Requests(oRequestParam);
+	const oAttachment = new Attachment(oRequestParam);
 
-	this.Attachments = new Attachments(this.token);
-	this.Checklists = new Checklists(this.token);
-	this.Comments = new Comments(this.token);
-	this.CustomFields = new CustomFields(this.token);
-	this.Dependencies = new Dependencies(this.token);
-	this.Folders = new Folders(this.token);
-	this.Goals = new Goals(this.token);
-	this.Guests = new Guests(this.token);
-	this.Lists = new Lists(this.token);
-	this.Members = new Members(this.token);
-	this.SharedHierarchy = new SharedHierarchy(this.token);
-	this.Spaces = new Spaces(this.token);
-	this.Tags = new Tags(this.token);
-	this.TaskCheckList = new TaskCheckList(this.token);
-	this.TaskRelationships = new TaskRelationships(this.token);
-	this.Tasks = new Task(this.token);
-	this.TaskTemplates = new TaskTemplates(this.token);
-	this.Teams = new Teams(this.token);
-	this.TimeTracking = new TimeTracking(this.token);
-	this.Users = new Users(this.token);
-	this.Roles = new Roles(this.token);
-	this.Views = new Views(this.token);
-	this.Webhooks = new Webhooks(this.token);
-}
+	this.Attachments = new Attachments(this.token, oAttachment);
+	this.Checklists = new Checklists(this.token, oRequests);
+	this.Comments = new Comments(this.token, oRequests);
+	this.CustomFields = new CustomFields(this.token, oRequests);
+	this.Dependencies = new Dependencies(this.token, oRequests);
+	this.Folders = new Folders(this.token, oRequests);
+	this.Goals = new Goals(this.token, oRequests);
+	this.Guests = new Guests(this.token, oRequests);
+	this.Lists = new Lists(this.token, oRequests);
+	this.Members = new Members(this.token, oRequests);
+	this.SharedHierarchy = new SharedHierarchy(this.token, oRequests);
+	this.Spaces = new Spaces(this.token, oRequests);
+	this.Tags = new Tags(this.token, oRequests);
+	this.TaskCheckList = new TaskCheckList(this.token, oRequests);
+	this.TaskRelationships = new TaskRelationships(this.token, oRequests);
+	this.Tasks = new Task(this.token, oRequests);
+	this.TaskTemplates = new TaskTemplates(this.token, oRequests);
+	this.Teams = new Teams(this.token, oRequests);
+	this.TimeTracking = new TimeTracking(this.token, oRequests);
+	this.Users = new Users(this.token, oRequests);
+	this.Roles = new Roles(this.token, oRequests);
+	this.Views = new Views(this.token, oRequests);
+	this.Webhooks = new Webhooks(this.token, oRequests);
+};
 
 module.exports = Clickup;
