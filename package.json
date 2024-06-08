@@ -1,6 +1,6 @@
 {
   "name": "clickup_api",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "No oficial module for ClickUp API",
   "main": "src/index.js",
   "contributors": [
@@ -9,7 +9,8 @@
     "Carlos Souza <51545352+csouza1995@users.noreply.github.com>",
     "accountantKev <50839401+accountantKev@users.noreply.github.com>",
     "mordygparency <https://github.com/mordygparency>",
-    "alexander-mart <https://github.com/mordygparency>"
+    "alexander-mart <https://github.com/mordygparency>",
+    "mcannesson <https://github.com/mcannesson>"
   ],
   "scripts": {
     "test": "jest"

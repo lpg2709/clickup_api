@@ -5,13 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.3.1] - 2024-xx-xx - 
+## [1.4.0] - 2024-xx-xx -
 
 ### Added
+
+- Custom host and port on Clickup constructor. Pull request [#17](https://github.com/lpg2709/clickup_api/pull/17) from [@mcannesson](https://github.com/mcannesson)
 
 ### Changed
 
 ### Fixed
+
+- Some tokens declaration copyes with out `var` declaration. (This confuse LSP). Pull request [#17](https://github.com/lpg2709/clickup_api/pull/17) from [@mcannesson](https://github.com/mcannesson)
 
 ## [1.3.0] - 2024-04-11 - 734e7630936b269ae4714023f19f6cecf2e1619c
 
