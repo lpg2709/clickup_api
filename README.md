@@ -71,6 +71,23 @@ var info = await Clickup.Tasks.create_task("list_id", data);
 console.log(info);
 ```
 
+## Custom Host
+
+Starting from version `1.4.0`, the module allow you to  use a custom host and port for make requests. (Implemented by [@mcannesson](https://github.com/mcannesson))
+
+By default, the request is made on api.clickup.com:443. If you want to set other host:
+
+```javascript
+const clickup_api = require("clickup_api");
+const Clickup = new clickup_api("access_token", { "host": "my-custom-host.com", "port": 42069, "pathPrefix": "" });
+```
+
+Where:
+
+- **host**: Ip or DNS from host.
+- **port**: Port of the service.
+- **pathPrefix**: This is concatenate in from of every path.
+
 ## Docs
 
 ### ClickUp API

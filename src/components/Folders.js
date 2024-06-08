@@ -1,8 +1,9 @@
 const Requests = require("../utils/requests");
 
-var Folders = function (token) {
+var Folders = function (token, request) {
 	this.token = token;
-}
+	this.request = request;
+};
 /**
  * Create a folder.
  * @param {String} space_id Space ID where the folder how be created
@@ -10,15 +11,20 @@ var Folders = function (token) {
  */
 Folders.prototype.create_folder = function (space_id, data) {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
-			var res = await Requests.https_clickupapi_post(`/api/v2/space/${space_id}/folder`, data, token);
+			var res = await request.https_clickupapi_post(
+				`/api/v2/space/${space_id}/folder`,
+				data,
+				token
+			);
 			resolve(res);
 		} catch (err) {
 			reject(err);
 		}
 	});
-}
+};
 /**
  * Update a folder.
  * @param {String} folder_id Folder to be updated
@@ -26,30 +32,39 @@ Folders.prototype.create_folder = function (space_id, data) {
  */
 Folders.prototype.update_folder = function (folder_id, data) {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
-			var res = await Requests.https_clickupapi_put(`/api/v2/folder/${folder_id}`, data, token);
+			var res = await request.https_clickupapi_put(
+				`/api/v2/folder/${folder_id}`,
+				data,
+				token
+			);
 			resolve(res);
 		} catch (err) {
 			reject(err);
 		}
 	});
-}
+};
 /**
  * Delete a folder.
  * @param {String} folder_id Folder to be deleted
  */
 Folders.prototype.delete_folder = function (folder_id) {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
-			var res = await Requests.https_clickupapi_delete(`/api/v2/folder/${folder_id}`, token);
+			var res = await request.https_clickupapi_delete(
+				`/api/v2/folder/${folder_id}`,
+				token
+			);
 			resolve(res);
 		} catch (err) {
 			reject(err);
 		}
 	});
-}
+};
 /**
  * Get all folder in space.
  * @param {String} space_id Space to search.
@@ -57,29 +72,37 @@ Folders.prototype.delete_folder = function (folder_id) {
  */
 Folders.prototype.get_folders = function (space_id, archived) {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
-			var res = await Requests.https_clickupapi_get(`/api/v2/space/${space_id}/folder?archived=${archived}`, token);
+			var res = await request.https_clickupapi_get(
+				`/api/v2/space/${space_id}/folder?archived=${archived}`,
+				token
+			);
 			resolve(res);
 		} catch (err) {
 			reject(err);
 		}
 	});
-}
+};
 /**
  * Get a folder
  * @param {String} folder_id Folder ID.
  */
 Folders.prototype.get_folder = function (folder_id) {
 	var token = this.token;
+	var request = this.request;
 	return new Promise(async function (resolve, reject) {
 		try {
-			var res = await Requests.https_clickupapi_get(`/api/v2/folder/${folder_id}`, token);
+			var res = await request.https_clickupapi_get(
+				`/api/v2/folder/${folder_id}`,
+				token
+			);
 			resolve(res);
 		} catch (err) {
 			reject(err);
 		}
 	});
-}
+};
 
 module.exports = Folders;
